@@ -1,3 +1,5 @@
+![theme](https://github.com/passivestar/godot-minimal-theme/assets/60579014/01c29b15-14be-47e9-a9bc-d9d2d935604f)
+
 # Minimal Godot Theme
 
 ## Installation
