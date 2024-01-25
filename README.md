@@ -4,7 +4,7 @@
 
 ## Installation
 
-- Click `Releases` on the right and download the `.tres` file. Use the high ppi version for high pixel density (i.e if you have on a laptop with a 4k display)
+- Click `Releases` on the right and download the `.tres` file. Use the high ppi version for high pixel density (i.e if you're on a laptop with a 4k display)
 - In Godot open `Editor Settings -> Interface -> Theme`, and choose the downloaded theme in the Editor Theme field
 
 ## Recommended settings
@@ -20,4 +20,4 @@ Everything else by default
 
 ## Known limitations
 
-- If you're using a different base color rather than one listed above, input fields may look out of place. This is the limitation of Godot's theming, there is no way to style `LineEdit`s with support for different base colors. Unfortunately there's nothing that I can do about it
+- If you're using a different base color rather than one listed above, input fields may look out of place. This is a limitation of Godot's theming, there is no way to style `LineEdit`s with support for different base colors. Unfortunately there's nothing that I can do about it
