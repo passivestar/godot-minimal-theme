@@ -17,3 +17,7 @@ To match the look of the theme in the screenshot, you can use the following sett
 - Icon Saturation: `1.8`
 
 Everything else by default
+
+## Known limitations
+
+- If you're using a different base color rather than one listed above, input fields may look out of place. This is the limitation of Godot's theming, there is no way to style `LineEdit`s with support for different base colors. Unfortunately there's nothing that I can do about it
