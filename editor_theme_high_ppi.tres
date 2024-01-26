@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=33 format=3 uid="uid://jkuo5ldmlvtl"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cupx2"]
 content_margin_left = 10.0
@@ -155,7 +155,7 @@ content_margin_left = 10.0
 content_margin_top = 8.0
 content_margin_right = 10.0
 content_margin_bottom = 8.0
-bg_color = Color(0, 0, 0, 0.117647)
+bg_color = Color(0, 0, 0, 0.196078)
 border_color = Color(0.101569, 0.101569, 0.101569, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -186,7 +186,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.101961, 0.101961, 0.101961, 0.533333)
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.588235)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -199,7 +199,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.203922)
+bg_color = Color(1, 1, 1, 0.196078)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -218,6 +218,8 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fejrw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwdgv"]
 bg_color = Color(1, 1, 1, 0)
@@ -287,6 +289,8 @@ HSplitContainer/constants/autohide = 1
 HSplitContainer/constants/minimum_grab_thickness = 6
 HSplitContainer/constants/separation = 4
 HSplitContainer/icons/grabber = SubResource("PlaceholderTexture2D_lu5el")
+ItemList/colors/guide_color = Color(1, 1, 1, 0)
+ItemList/constants/v_separation = 4
 ItemList/styles/cursor = SubResource("StyleBoxFlat_m3jjh")
 ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_m3jjh")
 ItemList/styles/focus = SubResource("StyleBoxFlat_20eiv")
@@ -294,7 +298,7 @@ ItemList/styles/hovered = SubResource("StyleBoxFlat_32au3")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_8atl4")
 ItemList/styles/selected = SubResource("StyleBoxFlat_32au3")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_32au3")
-Label/colors/font_color = Color(1, 1, 1, 0.470588)
+Label/colors/font_color = Color(1, 1, 1, 0.627451)
 LineEdit/colors/font_placeholder_color = Color(1, 1, 1, 0.27451)
 LineEdit/styles/focus = SubResource("StyleBoxFlat_cfx35")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_0nfa3")
@@ -316,14 +320,19 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_twhwf")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xdk0w")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_tx2dl")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_tx2dl")
+TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_fejrw")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_kwdgv")
 TextEdit/constants/outline_size = 0
 TextEdit/styles/focus = SubResource("StyleBoxFlat_g2pmp")
 Tree/colors/children_hl_line_color = Color(1, 1, 1, 0.0196078)
-Tree/colors/drop_position_color = Color(1, 1, 1, 1)
+Tree/colors/drop_position_color = Color(1, 1, 1, 0.392157)
 Tree/colors/font_color = Color(1, 1, 1, 0.627451)
+Tree/colors/guide_color = Color(1, 1, 1, 0)
 Tree/colors/parent_hl_line_color = Color(1, 1, 1, 0.0196078)
+Tree/constants/children_hl_line_width = 0
 Tree/constants/draw_guides = 0
+Tree/constants/draw_relationship_lines = 0
+Tree/constants/parent_hl_line_width = 0
 Tree/constants/relationship_line_width = 0
 Tree/constants/v_separation = 1
 Tree/styles/cursor = SubResource("StyleBoxFlat_m3jjh")
