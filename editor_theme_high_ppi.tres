@@ -418,12 +418,12 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwdgv"]
 bg_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2pmp"]
-content_margin_left = 8.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62kny"]
+content_margin_left = 12.0
 content_margin_top = 8.0
-content_margin_right = 8.0
+content_margin_right = 12.0
 content_margin_bottom = 8.0
-bg_color = Color(1, 1, 1, 0.75)
+bg_color = Color(0, 0, 0, 0.0392157)
 draw_center = false
 border_width_left = 2
 border_width_top = 2
@@ -440,6 +440,10 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7304"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.156863)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -447,6 +451,10 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ucq2"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.0784314)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -538,7 +546,7 @@ TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_fejrw")
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.235294)
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_kwdgv")
 TextEdit/constants/outline_size = 0
-TextEdit/styles/focus = SubResource("StyleBoxFlat_g2pmp")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_62kny")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_t7304")
 TextEdit/styles/read_only = SubResource("StyleBoxFlat_6ucq2")
 Tree/colors/children_hl_line_color = Color(1, 1, 1, 0.0196078)
