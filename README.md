@@ -3,7 +3,7 @@
 
 ![theme_01](https://github.com/passivestar/godot-minimal-theme/assets/60579014/84f7672b-2313-47f4-b4c5-0db7020756d7)
 
-![theme_02](https://github.com/passivestar/godot-minimal-theme/assets/60579014/a0818854-bd7a-4473-b4a6-fec74c690648)
+<img width="1200" alt="theme_02" src="https://github.com/passivestar/godot-minimal-theme/assets/60579014/c85e66c1-a3a2-4b2d-8f2f-e1e3a43b19e5">
 
 ## Installation
 
