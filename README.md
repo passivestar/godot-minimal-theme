@@ -7,8 +7,13 @@
 
 ## Installation
 
-- Go to [Releases](https://github.com/passivestar/godot-minimal-theme/releases) and download the `.tres` file of the latest version. Use the high ppi file for high pixel density displays (i.e if you're using a laptop with a high-resolution display and in-engine display scale over 100%)
+- Go to [Releases](https://github.com/passivestar/godot-minimal-theme/releases) and download the `.tres` file for your version. Use the high ppi file for high pixel density displays (i.e if you're using a laptop with a high-resolution display and in-engine display scale over 100%)
 - In Godot open `Editor Settings -> Interface -> Theme`, and choose the downloaded theme in the `Editor Theme` field
+
+## Versions
+
+- For Godot 4.2.x use this version: [1.2.1](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.2.1)
+- For Godot 4.3.x use this version: [1.3.0](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.3.0)
 
 ## Recommended settings
 
