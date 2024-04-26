@@ -27,3 +27,11 @@ To match the look of the theme in the screenshot use the following settings:
 ## Compatibility
 
 If you're using a different base color rather than the recommended one (non-monochrome), input fields may look wrong. I did my best to support all editor settings, however, as of today, some things in Godot just can't be themed. There's no way to style `LineEdit`s with support for different base colors
+
+## Overview
+
+**Gamefromscratch** made a video showing the evolution of Godot UI over the years and explaining how to use this theme
+
+You can watch it on YouTube by clicking this:
+
+<a href="https://youtu.be/WmZq3UgOGKY"><img width="1200" alt="theme_02" src="https://github.com/passivestar/godot-minimal-theme/assets/60579014/7993fb01-1231-4c33-97da-fb3e24d09816"></a>
