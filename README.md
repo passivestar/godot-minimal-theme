@@ -12,8 +12,8 @@
 
 ## Versions
 
-- For Godot 4.2.x use this version: [1.2.1](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.2.1)
-- For Godot 4.3.x use this version: [1.3.0](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.3.0)
+- For Godot 4.2.x and current 4.3dev5 use this version: [1.2.1](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.2.1)
+- For Godot versions newer than 4.3dev5 use this version: [1.3.0](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.3.0)
 
 ## Recommended settings
 
