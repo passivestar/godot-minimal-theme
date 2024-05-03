@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=45 format=4 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=47 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduyo"]
 content_margin_left = 5.0
@@ -446,6 +446,12 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cdxsg"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iiskc"]
+size = Vector2(0, 0)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fejrw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwdgv"]
@@ -599,6 +605,10 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_twhwf")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xdk0w")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_tx2dl")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_tx2dl")
+SplitContainer/constants/minimum_grab_thickness = 6
+SplitContainer/constants/separation = 2
+SplitContainer/icons/h_grabber = SubResource("PlaceholderTexture2D_cdxsg")
+SplitContainer/icons/v_grabber = SubResource("PlaceholderTexture2D_iiskc")
 TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_fejrw")
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.235294)
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_kwdgv")
