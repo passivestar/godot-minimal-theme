@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=47 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=50 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduyo"]
 content_margin_left = 5.0
@@ -181,6 +181,38 @@ corner_detail = 4
 anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvpax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ujr6"]
+content_margin_left = 6.0
+content_margin_top = 0.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txmfc"]
+content_margin_left = 6.0
+content_margin_top = 0.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65mu5"]
 content_margin_left = 5.0
@@ -543,6 +575,9 @@ EditorProperty/styles/bg_selected = SubResource("StyleBoxFlat_lx8tr")
 EditorProperty/styles/child_bg = SubResource("StyleBoxFlat_piki4")
 EditorSpinSlider/styles/label_bg = SubResource("StyleBoxFlat_mw5o7")
 EditorStyles/styles/FocusViewport = SubResource("StyleBoxEmpty_bvpax")
+EditorStyles/styles/LaunchPadMovieMode = SubResource("StyleBoxFlat_0ujr6")
+EditorStyles/styles/LaunchPadNormal = SubResource("StyleBoxFlat_txmfc")
+EditorStyles/styles/MovieWriterButtonPressed = SubResource("StyleBoxEmpty_7ss2t")
 FlatButton/styles/disabled = SubResource("StyleBoxEmpty_65mu5")
 FlatButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
 FlatButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
