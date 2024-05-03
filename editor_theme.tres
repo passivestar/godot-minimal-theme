@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=50 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=51 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduyo"]
 content_margin_left = 5.0
@@ -202,10 +202,6 @@ content_margin_right = 6.0
 content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 0)
 draw_center = false
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
 border_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -532,6 +528,20 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr21i"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.08, 0.08, 0.08, 1)
+border_color = Color(0.401569, 0.401569, 0.401569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+anti_aliasing = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3su5"]
 content_margin_left = 6.0
 content_margin_top = 4.0
@@ -651,6 +661,7 @@ TextEdit/constants/outline_size = 0
 TextEdit/styles/focus = SubResource("StyleBoxFlat_62kny")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_t7304")
 TextEdit/styles/read_only = SubResource("StyleBoxFlat_6ucq2")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_qr21i")
 Tree/colors/children_hl_line_color = Color(1, 1, 1, 0.0196078)
 Tree/colors/drop_position_color = Color(1, 1, 1, 0.392157)
 Tree/colors/font_color = Color(1, 1, 1, 0.627451)
