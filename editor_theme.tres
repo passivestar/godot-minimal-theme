@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=51 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=52 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduyo"]
 content_margin_left = 5.0
@@ -430,6 +430,13 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbgao"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.11, 0.11, 0.11, 1)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rijeh"]
 color = Color(0, 0, 0, 0.235294)
 grow_begin = -6.0
@@ -645,6 +652,7 @@ OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_4355j")
 PopupMenu/constants/item_start_padding = 10
 PopupMenu/constants/v_separation = 6
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_yg4d4")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_cbgao")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_rijeh")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_twhwf")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xdk0w")
