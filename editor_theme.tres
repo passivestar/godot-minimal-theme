@@ -210,6 +210,8 @@ corner_radius_bottom_left = 4
 corner_detail = 4
 anti_aliasing = false
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ss2t"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65mu5"]
 content_margin_left = 5.0
 content_margin_top = 4.0
