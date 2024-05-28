@@ -23,6 +23,7 @@ To match the look of the theme in the screenshot use the following settings:
 - Accent Color: `#569eff`
 - Contrast: `0.2`
 - Icon Saturation: `2`
+- Font: [Inter](https://rsms.me/inter/)
 
 ## Compatibility
 
