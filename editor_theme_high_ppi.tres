@@ -440,7 +440,7 @@ content_margin_bottom = 12.0
 bg_color = Color(0.11, 0.11, 0.11, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rijeh"]
-color = Color(0, 0, 0, 0.235294)
+color = Color(1, 1, 1, 0.0784314)
 grow_begin = -12.0
 grow_end = -12.0
 thickness = 2
