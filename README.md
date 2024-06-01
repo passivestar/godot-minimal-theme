@@ -9,7 +9,7 @@
 
 - Go to [Releases](https://github.com/passivestar/godot-minimal-theme/releases) and download the `.tres` file for your version. Use the high ppi file for high pixel density displays (i.e if you're using a laptop with a high-resolution display and in-engine display scale over 100%)
 - In Godot open `Editor Settings -> Interface -> Theme`, and choose the downloaded theme in the `Custom Theme` field.
-- A message will pop up saying: "The editor must be restarted for the changes to take effect." with a "Save & Restart" button. If desired, the base color, accent Color, etc. in #recommended-settings can be adjusted before doing so. When ready, click Save & Restart.
+- A message will pop up saying: "The editor must be restarted for the changes to take effect." with a "Save & Restart" button. If desired, the Base Color, Accent Color, etc. in [Recommended settings](https://github.com/passivestar/godot-minimal-theme?tab=readme-ov-file#recommended-settings) can be adjusted before doing so. When ready, click "Save & Restart".
 
 ## Versions
 
