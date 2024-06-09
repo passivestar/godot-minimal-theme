@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=52 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=54 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduyo"]
 content_margin_left = 5.0
@@ -127,6 +127,30 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2305v"]
+content_margin_left = 4
+content_margin_top = 4
+content_margin_right = 4
+content_margin_bottom = 4
+bg_color = Color(0, 0, 0, 0.156863)
+border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erijh"]
+content_margin_left = 4
+content_margin_top = 4
+content_margin_right = 4
+content_margin_bottom = 4
+bg_color = Color(0, 0, 0, 0.235294)
+border_color = Color(0.0957176, 0.0957176, 0.0957176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_detail = 4
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm6fs"]
 bg_color = Color(1, 1, 1, 0.0392157)
@@ -584,6 +608,8 @@ Editor/colors/box_selection_stroke_color = Color(1, 1, 1, 0.8)
 Editor/colors/warning_color = Color(1, 0.854902, 0.458824, 1)
 Editor/constants/top_bar_separation = 3
 Editor/constants/window_border_margin = 3
+EditorHelpBitContent/styles/normal = SubResource("StyleBoxFlat_2305v")
+EditorHelpBitTitle/styles/normal = SubResource("StyleBoxFlat_erijh")
 EditorInspectorCategory/styles/bg = SubResource("StyleBoxFlat_cm6fs")
 EditorLogFilterButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
 EditorLogFilterButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
@@ -602,8 +628,8 @@ FlatButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 FlatButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 FlatButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 FlatButton/colors/font_pressed_color = Color(1, 1, 1, 1)
-FlatButton/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
 FlatButton/colors/icon_disabled_color = Color(1, 1, 1, 0.313726)
+FlatButton/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
 FlatButton/styles/disabled = SubResource("StyleBoxEmpty_65mu5")
 FlatButton/styles/disabled_mirrored = SubResource("StyleBoxEmpty_65mu5")
 FlatButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
