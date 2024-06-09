@@ -129,10 +129,10 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2305v"]
-content_margin_left = 8
-content_margin_top = 8
-content_margin_right = 8
-content_margin_bottom = 8
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.156863)
 border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
 corner_radius_bottom_right = 8
@@ -141,10 +141,10 @@ corner_detail = 4
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erijh"]
-content_margin_left = 8
-content_margin_top = 8
-content_margin_right = 8
-content_margin_bottom = 8
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.235294)
 border_color = Color(0.0957176, 0.0957176, 0.0957176, 1)
 corner_radius_top_left = 8
@@ -690,7 +690,7 @@ MenuButton/styles/normal = SubResource("StyleBoxFlat_l5ore")
 MenuButton/styles/normal_mirrored = SubResource("StyleBoxFlat_l5ore")
 MenuButton/styles/pressed = SubResource("StyleBoxFlat_l5ore")
 MenuButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_l5ore")
-OptionButton/colors/font_color = Color(1, 1, 1, 0.501961)
+OptionButton/colors/font_color = Color(1, 1, 1, 0.705882)
 OptionButton/colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0.313726)
 OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
