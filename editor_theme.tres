@@ -230,7 +230,12 @@ corner_radius_bottom_left = 4
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ss2t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v8w3"]
+bg_color = Color(1, 1, 1, 0.352941)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65mu5"]
 content_margin_left = 5.0
@@ -621,7 +626,7 @@ EditorSpinSlider/styles/label_bg = SubResource("StyleBoxFlat_mw5o7")
 EditorStyles/styles/FocusViewport = SubResource("StyleBoxEmpty_bvpax")
 EditorStyles/styles/LaunchPadMovieMode = SubResource("StyleBoxFlat_0ujr6")
 EditorStyles/styles/LaunchPadNormal = SubResource("StyleBoxFlat_txmfc")
-EditorStyles/styles/MovieWriterButtonPressed = SubResource("StyleBoxEmpty_7ss2t")
+EditorStyles/styles/MovieWriterButtonPressed = SubResource("StyleBoxFlat_0v8w3")
 FlatButton/colors/font_color = Color(1, 1, 1, 0.501961)
 FlatButton/colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0.313726)
 FlatButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
