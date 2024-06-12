@@ -287,10 +287,10 @@ content_margin_top = 8.0
 content_margin_right = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgp2j"]
-content_margin_left = 10.0
-content_margin_top = 8.0
-content_margin_right = 10.0
-content_margin_bottom = 8.0
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfx35"]
 content_margin_left = 14.0
