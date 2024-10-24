@@ -242,7 +242,7 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm6fs"]
 content_margin_top = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.0392157)
+bg_color = Color(1, 1, 1, 0.0588235)
 border_color = Color(1, 1, 1, 0.709804)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
