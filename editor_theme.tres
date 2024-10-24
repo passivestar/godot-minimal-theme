@@ -1004,6 +1004,7 @@ TextEdit/styles/read_only = SubResource("StyleBoxFlat_6ucq2")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_qr21i")
 Tree/colors/drop_position_color = Color(1, 1, 1, 0.392157)
 Tree/colors/font_color = Color(1, 1, 1, 0.627451)
+Tree/colors/guide_color = Color(1, 1, 1, 0)
 Tree/colors/parent_hl_line_color = Color(1, 1, 1, 0.0980392)
 Tree/constants/children_hl_line_width = 0
 Tree/constants/draw_guides = 0
