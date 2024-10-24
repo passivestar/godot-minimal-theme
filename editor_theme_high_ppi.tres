@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=67 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=68 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -403,7 +403,13 @@ draw_center = false
 border_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32au3"]
-bg_color = Color(1, 1, 1, 0.0392157)
+bg_color = Color(1, 1, 1, 0.0980392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.156863)
+border_blend = true
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -734,6 +740,19 @@ corner_radius_bottom_left = 8
 corner_detail = 4
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3yhk"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.0784314)
+border_color = Color(0.145098, 0.145098, 0.145098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68sxm"]
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -745,18 +764,12 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3yhk"]
-content_margin_left = 6.0
-content_margin_top = 6.0
-content_margin_right = 6.0
-content_margin_bottom = 6.0
-bg_color = Color(1, 1, 1, 0.0392157)
-border_color = Color(0.145098, 0.145098, 0.145098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1a6f"]
+bg_color = Color(1, 1, 1, 0.0784314)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3su5"]
 content_margin_left = 12.0
@@ -1002,12 +1015,16 @@ Tree/constants/inner_item_margin_right = 2
 Tree/constants/parent_hl_line_width = 0
 Tree/constants/relationship_line_width = 0
 Tree/constants/v_separation = 1
+Tree/styles/button_hover = SubResource("StyleBoxFlat_v3yhk")
 Tree/styles/button_pressed = SubResource("StyleBoxFlat_68sxm")
 Tree/styles/cursor = SubResource("StyleBoxFlat_m3jjh")
 Tree/styles/cursor_unfocused = SubResource("StyleBoxFlat_m3jjh")
+Tree/styles/custom_button_hover = SubResource("StyleBoxFlat_v1a6f")
 Tree/styles/custom_button_pressed = SubResource("StyleBoxFlat_68sxm")
 Tree/styles/focus = SubResource("StyleBoxFlat_20eiv")
 Tree/styles/hover = SubResource("StyleBoxFlat_v3yhk")
+Tree/styles/hovered = SubResource("StyleBoxFlat_v1a6f")
+Tree/styles/hovered_dimmed = SubResource("StyleBoxFlat_v3yhk")
 Tree/styles/panel = SubResource("StyleBoxEmpty_8atl4")
 Tree/styles/selected = SubResource("StyleBoxFlat_32au3")
 Tree/styles/selected_focus = SubResource("StyleBoxFlat_32au3")
