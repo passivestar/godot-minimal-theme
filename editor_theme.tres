@@ -802,7 +802,7 @@ corner_detail = 4
 anti_aliasing = false
 
 [resource]
-AnimationBezierTrackEdit/colors/focus_color = Color(0.91, 0.91, 0.91, 0)
+AnimationBezierTrackEdit/colors/focus_color = Color(1, 1, 1, 0)
 AnimationBezierTrackEdit/colors/h_line_color = Color(1, 1, 1, 0.117647)
 AnimationBezierTrackEdit/colors/track_focus_color = Color(1, 1, 1, 0.0980392)
 AnimationBezierTrackEdit/colors/v_line_color = Color(1, 1, 1, 0)
@@ -819,14 +819,14 @@ AnimationTimelineEdit/constants/v_line_secondary_margin = 6
 AnimationTimelineEdit/constants/v_line_secondary_width = 1
 AnimationTimelineEdit/styles/time_available = SubResource("StyleBoxFlat_503jw")
 AnimationTimelineEdit/styles/time_unavailable = SubResource("StyleBoxFlat_yu7sd")
-AnimationTrackEdit/colors/h_line_color = Color(0.79, 0.79, 0.79, 0)
+AnimationTrackEdit/colors/h_line_color = Color(1, 1, 1, 0)
 AnimationTrackEdit/constants/h_separation = 6
 AnimationTrackEdit/styles/focus = SubResource("StyleBoxFlat_rdfw0")
 AnimationTrackEdit/styles/hover = SubResource("StyleBoxFlat_xd1kb")
 AnimationTrackEdit/styles/odd = SubResource("StyleBoxFlat_l0xtq")
 AnimationTrackEditGroup/colors/bg_color = Color(0, 0, 0, 0.0784314)
-AnimationTrackEditGroup/colors/h_line_color = Color(0.79, 0.79, 0.79, 0)
-AnimationTrackEditGroup/colors/v_line_color = Color(0.79, 0.79, 0.79, 0)
+AnimationTrackEditGroup/colors/h_line_color = Color(1, 1, 1, 0)
+AnimationTrackEditGroup/colors/v_line_color = Color(1, 1, 1, 0)
 AnimationTrackEditGroup/constants/h_separation = 5
 AnimationTrackEditGroup/styles/header = SubResource("StyleBoxFlat_h2xx7")
 BottomPanelButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
