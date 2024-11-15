@@ -26,6 +26,7 @@ To match the look of the theme in the screenshot use the following settings:
 - Accent Color: `#569eff`
 - Contrast: `0.2`
 - Icon Saturation: `2`
+- Corner Radius: `4`
 
 `Editor Settings -> Interface -> Editor`:
 
