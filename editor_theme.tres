@@ -878,6 +878,7 @@ EditorInspectorSection/constants/h_separation = 3
 EditorLogFilterButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
 EditorLogFilterButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 EditorLogFilterButton/styles/pressed = SubResource("StyleBoxFlat_1pq5m")
+EditorProperty/colors/warning_color = Color(0.77, 0.66528, 0.3773, 1)
 EditorProperty/styles/bg = SubResource("StyleBoxEmpty_ajvab")
 EditorProperty/styles/bg_selected = SubResource("StyleBoxFlat_lx8tr")
 EditorProperty/styles/child_bg = SubResource("StyleBoxFlat_piki4")
