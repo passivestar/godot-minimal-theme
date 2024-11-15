@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=68 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=69 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -428,6 +428,20 @@ corner_radius_bottom_left = 8
 content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdm6"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.156863)
+border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgp2j"]
 content_margin_left = 8.0
@@ -941,6 +955,7 @@ ItemList/styles/hovered = SubResource("StyleBoxFlat_32au3")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_8atl4")
 ItemList/styles/selected = SubResource("StyleBoxFlat_32au3")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_32au3")
+ItemListSecondary/styles/panel = SubResource("StyleBoxFlat_djdm6")
 Label/colors/font_color = Color(1, 1, 1, 0.627451)
 Label/styles/normal = SubResource("StyleBoxEmpty_pgp2j")
 LineEdit/colors/font_placeholder_color = Color(1, 1, 1, 0.27451)
@@ -1039,6 +1054,7 @@ Tree/styles/selected_focus = SubResource("StyleBoxFlat_32au3")
 Tree/styles/title_button_hover = SubResource("StyleBoxFlat_h3su5")
 Tree/styles/title_button_normal = SubResource("StyleBoxFlat_h3su5")
 Tree/styles/title_button_pressed = SubResource("StyleBoxFlat_h3su5")
+TreeSecondary/styles/panel = SubResource("StyleBoxFlat_djdm6")
 VBoxContainer/constants/separation = 4
 VSplitContainer/constants/autohide = 1
 VSplitContainer/constants/minimum_grab_thickness = 12
