@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=69 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=70 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -214,6 +214,21 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twyxl"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.101569, 0.101569, 0.101569, 1)
+draw_center = false
+border_color = Color(0.0798039, 0.0798039, 0.0798039, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2305v"]
 content_margin_left = 8.0
@@ -853,6 +868,9 @@ Button/styles/normal = SubResource("StyleBoxFlat_ubyga")
 Button/styles/normal_mirrored = SubResource("StyleBoxFlat_ubyga")
 Button/styles/pressed = SubResource("StyleBoxFlat_dpijl")
 Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_dpijl")
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 0.705882)
+CheckBox/styles/normal = SubResource("StyleBoxFlat_twyxl")
 Editor/colors/background = Color(0.1, 0.1, 0.1, 1)
 Editor/colors/box_selection_fill_color = Color(1, 1, 1, 0.117647)
 Editor/colors/box_selection_stroke_color = Color(1, 1, 1, 0.352941)
