@@ -988,6 +988,7 @@ OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
 OptionButton/colors/icon_disabled_color = Color(1, 1, 1, 0.313726)
 OptionButton/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
+OptionButton/constants/arrow_margin = 14
 OptionButton/styles/disabled = SubResource("StyleBoxFlat_s11c6")
 OptionButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_s11c6")
 OptionButton/styles/focus = SubResource("StyleBoxFlat_tj0ge")
