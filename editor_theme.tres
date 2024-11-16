@@ -429,6 +429,20 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdm6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.156863)
+border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgp2j"]
 content_margin_left = 4.0
 content_margin_top = 3.0
@@ -448,9 +462,9 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nfa3"]
-content_margin_left = 7.0
+content_margin_left = 6.0
 content_margin_top = 2.0
-content_margin_right = 7.0
+content_margin_right = 4.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 0.196078)
 border_color = Color(1, 1, 1, 0.117647)
@@ -786,20 +800,6 @@ content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 0.235294)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdm6"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.156863)
-border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 4
-anti_aliasing = false
 
 [resource]
 AnimationBezierTrackEdit/colors/focus_color = Color(1, 1, 1, 0)
