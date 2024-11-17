@@ -221,9 +221,9 @@ corner_detail = 5
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2305v"]
-content_margin_left = 8.0
+content_margin_left = 16.0
 content_margin_top = 8.0
-content_margin_right = 8.0
+content_margin_right = 16.0
 content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.156863)
 border_color = Color(0.0580392, 0.0580392, 0.0580392, 1)
@@ -233,9 +233,9 @@ corner_detail = 4
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erijh"]
-content_margin_left = 8.0
+content_margin_left = 16.0
 content_margin_top = 8.0
-content_margin_right = 8.0
+content_margin_right = 16.0
 content_margin_bottom = 8.0
 bg_color = Color(0, 0, 0, 0.235294)
 border_color = Color(0.0957176, 0.0957176, 0.0957176, 1)
