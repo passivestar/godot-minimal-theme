@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=69 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=64 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -254,8 +254,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajvab"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piki4"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -281,8 +279,6 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 4
 anti_aliasing = false
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvpax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p74x"]
 content_margin_left = 12.0
@@ -526,8 +522,6 @@ corner_radius_bottom_left = 8
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djdm6"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohale"]
 content_margin_left = 10.0
 bg_color = Color(1, 1, 1, 0.117647)
@@ -672,11 +666,6 @@ size = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iiskc"]
 size = Vector2(0, 0)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fejrw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwdgv"]
-bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62kny"]
 content_margin_left = 12.0
@@ -853,15 +842,15 @@ EditorLogFilterButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 EditorLogFilterButton/styles/pressed = SubResource("StyleBoxFlat_1pq5m")
 EditorProperty/colors/property_color = Color(1, 1, 1, 0.627451)
 EditorProperty/colors/warning_color = Color(0.95, 0.855, 0.57, 1)
-EditorProperty/styles/bg = SubResource("StyleBoxEmpty_ajvab")
-EditorProperty/styles/bg_selected = SubResource("StyleBoxEmpty_ajvab")
+EditorProperty/styles/bg = SubResource("StyleBoxEmpty_v1a6f")
+EditorProperty/styles/bg_selected = SubResource("StyleBoxEmpty_v1a6f")
 EditorProperty/styles/child_bg = SubResource("StyleBoxFlat_piki4")
 EditorSpinSlider/styles/label_bg = SubResource("StyleBoxFlat_mw5o7")
 EditorStyles/colors/movie_writer_icon_hover = Color(1, 1, 1, 0.823529)
 EditorStyles/colors/movie_writer_icon_hover_pressed = Color(1, 1, 1, 0.823529)
 EditorStyles/colors/movie_writer_icon_normal = Color(1, 1, 1, 0.7)
 EditorStyles/colors/movie_writer_icon_pressed = Color(1, 1, 1, 0.941176)
-EditorStyles/styles/FocusViewport = SubResource("StyleBoxEmpty_bvpax")
+EditorStyles/styles/FocusViewport = SubResource("StyleBoxEmpty_v1a6f")
 EditorStyles/styles/Information3dViewport = SubResource("StyleBoxFlat_2p74x")
 EditorStyles/styles/LaunchPadMovieMode = SubResource("StyleBoxFlat_0ujr6")
 EditorStyles/styles/LaunchPadNormal = SubResource("StyleBoxFlat_txmfc")
@@ -967,7 +956,7 @@ OptionButton/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
 OptionButton/constants/arrow_margin = 14
 OptionButton/styles/disabled = SubResource("StyleBoxFlat_s11c6")
 OptionButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_s11c6")
-OptionButton/styles/focus = SubResource("StyleBoxEmpty_djdm6")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_v1a6f")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_ohale")
 OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_ohale")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_if3jf")
@@ -990,9 +979,9 @@ SplitContainer/constants/minimum_grab_thickness = 12
 SplitContainer/constants/separation = 4
 SplitContainer/icons/h_grabber = SubResource("PlaceholderTexture2D_cdxsg")
 SplitContainer/icons/v_grabber = SubResource("PlaceholderTexture2D_iiskc")
-TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_fejrw")
+TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_v1a6f")
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.235294)
-TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_kwdgv")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_v1a6f")
 TextEdit/constants/outline_size = 0
 TextEdit/styles/focus = SubResource("StyleBoxFlat_62kny")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_t7304")
