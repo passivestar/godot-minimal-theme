@@ -135,17 +135,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wapt7"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.0392157)
-border_color = Color(1, 1, 1, 0.0509804)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1a6f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cupx2"]
 content_margin_left = 6.0
@@ -536,19 +526,7 @@ corner_radius_bottom_left = 4
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj0ge"]
-content_margin_left = 5.0
-bg_color = Color(1, 1, 1, 0.0392157)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.117647)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djdm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohale"]
 content_margin_left = 5.0
@@ -827,7 +805,7 @@ BottomPanelButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
 BottomPanelButton/styles/hover_pressed = SubResource("StyleBoxFlat_jduyo")
 BottomPanelButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 BottomPanelButton/styles/pressed = SubResource("StyleBoxFlat_1pq5m")
-Button/colors/font_color = Color(1, 1, 1, 0.705882)
+Button/colors/font_color = Color(1, 1, 1, 0.666667)
 Button/colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0.313726)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
@@ -838,7 +816,7 @@ Button/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
 Button/constants/outline_size = 0
 Button/styles/disabled = SubResource("StyleBoxFlat_s11c6")
 Button/styles/disabled_mirrored = SubResource("StyleBoxFlat_s11c6")
-Button/styles/focus = SubResource("StyleBoxFlat_wapt7")
+Button/styles/focus = SubResource("StyleBoxEmpty_v1a6f")
 Button/styles/hover = SubResource("StyleBoxFlat_cupx2")
 Button/styles/hover_mirrored = SubResource("StyleBoxFlat_cupx2")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_6tiqf")
@@ -989,7 +967,7 @@ OptionButton/colors/icon_normal_color = Color(1, 1, 1, 0.705882)
 OptionButton/constants/arrow_margin = 7
 OptionButton/styles/disabled = SubResource("StyleBoxFlat_s11c6")
 OptionButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_s11c6")
-OptionButton/styles/focus = SubResource("StyleBoxFlat_tj0ge")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_djdm6")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_ohale")
 OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_ohale")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_if3jf")
