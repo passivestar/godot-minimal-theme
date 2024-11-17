@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=70 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=69 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -265,21 +265,6 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajvab"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx8tr"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(1, 1, 1, 0.0392157)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piki4"]
 content_margin_left = 8.0
@@ -891,7 +876,7 @@ EditorLogFilterButton/styles/pressed = SubResource("StyleBoxFlat_1pq5m")
 EditorProperty/colors/property_color = Color(1, 1, 1, 0.627451)
 EditorProperty/colors/warning_color = Color(0.95, 0.855, 0.57, 1)
 EditorProperty/styles/bg = SubResource("StyleBoxEmpty_ajvab")
-EditorProperty/styles/bg_selected = SubResource("StyleBoxFlat_lx8tr")
+EditorProperty/styles/bg_selected = SubResource("StyleBoxEmpty_ajvab")
 EditorProperty/styles/child_bg = SubResource("StyleBoxFlat_piki4")
 EditorSpinSlider/styles/label_bg = SubResource("StyleBoxFlat_mw5o7")
 EditorStyles/colors/movie_writer_icon_hover = Color(1, 1, 1, 0.823529)
