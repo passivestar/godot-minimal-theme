@@ -879,6 +879,7 @@ FlatMenuButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 FlatMenuButton/styles/normal_mirrored = SubResource("StyleBoxFlat_sxnkh")
 FlatMenuButton/styles/pressed = SubResource("StyleBoxFlat_fkpl4")
 FlatMenuButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_fkpl4")
+GraphStateMachine/colors/focus_color = Color(1, 1, 1, 0)
 HBoxContainer/constants/separation = 2
 HSplitContainer/constants/autohide = 1
 HSplitContainer/constants/minimum_grab_thickness = 6
