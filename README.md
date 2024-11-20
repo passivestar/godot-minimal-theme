@@ -1,5 +1,6 @@
-![minimal-theme](https://github.com/user-attachments/assets/d2d78439-e2e1-4f49-a4a9-720eef878413)
-![minimal-theme-window](https://github.com/user-attachments/assets/d7dfd4fc-1ca3-4429-97ca-67dc3c6dca2d)
+![minimal-theme](https://github.com/user-attachments/assets/75df90f3-4bf6-464c-b59b-5a8a169cfa7b)
+![minimal-theme-window](https://github.com/user-attachments/assets/55f548fc-8942-401a-970b-9869150ca9f8)
+
 
 _Demo scene credit: https://github.com/Jamsers/Bistro-Demo-Tweaked_
 
