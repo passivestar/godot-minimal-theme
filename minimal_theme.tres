@@ -592,18 +592,18 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rijeh"]
+color = Color(1, 1, 1, 0.0784314)
+grow_begin = -6.0
+grow_end = -6.0
+thickness = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbgao"]
 content_margin_left = 6.0
 content_margin_top = 6.0
 content_margin_right = 6.0
 content_margin_bottom = 6.0
 bg_color = Color(0.11, 0.11, 0.11, 1)
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_rijeh"]
-color = Color(1, 1, 1, 0.0784314)
-grow_begin = -6.0
-grow_end = -6.0
-thickness = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sp0q"]
 content_margin_left = 7.0
@@ -961,6 +961,7 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_twhwf")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xdk0w")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_tx2dl")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_tx2dl")
+ScrollContainer/styles/focus = SubResource("StyleBoxEmpty_v1a6f")
 SplitContainer/constants/minimum_grab_thickness = 6
 SplitContainer/constants/separation = 2
 SplitContainer/icons/h_grabber = SubResource("PlaceholderTexture2D_cdxsg")
