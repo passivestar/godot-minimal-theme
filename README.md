@@ -11,13 +11,13 @@ _Demo scene credit: https://github.com/Jamsers/Bistro-Demo-Tweaked_
 
 ## Versions
 
-- For Godot **4.4** and newer use version [1.7.0](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.7.0)
+- For Godot **4.4** and newer use the [latest version](https://github.com/passivestar/godot-minimal-theme/releases/latest)
 - For Godot **4.3** use version [1.6.0](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.6.0)
 - For Godot **4.2** use version [1.2.1](https://github.com/passivestar/godot-minimal-theme/releases/tag/1.2.1)
 
 ## Installation
 
-1. Go to [Releases](https://github.com/passivestar/godot-minimal-theme/releases) and download the `.tres` file for your version. Use the high ppi file if you're using in-engine display scale of over **100%** (for example if you're using a laptop with a high pixel density display)
+1. Download the `.tres` file of the [latest version](https://github.com/passivestar/godot-minimal-theme/releases/latest) of the theme. Use the `_high_ppi.tres` version if you're using in-engine display scale of over **100%** (for example if you're using a laptop with a high pixel density display)
 2.  In Godot open `Editor Settings -> Interface -> Theme`, and choose the downloaded theme in the `Custom Theme` field
 3.  Set the theme settings like in the [Recommended settings](https://github.com/passivestar/godot-minimal-theme?tab=readme-ov-file#recommended-settings) below
 4. Click `Save & Restart`
