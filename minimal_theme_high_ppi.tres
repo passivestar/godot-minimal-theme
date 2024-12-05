@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=64 format=3 uid="uid://bcibt73qths3v"]
+[gd_resource type="Theme" load_steps=65 format=3 uid="uid://bcibt73qths3v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_503jw"]
 content_margin_left = 0.0
@@ -93,6 +93,18 @@ content_margin_top = 8.0
 content_margin_right = 10.0
 content_margin_bottom = 8.0
 bg_color = Color(1, 1, 1, 0.0784314)
+border_color = Color(0.0980394, 0.107843, 0.112745, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mch4"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.156863)
 border_color = Color(0.0980394, 0.107843, 0.112745, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -775,7 +787,7 @@ AnimationTrackEditGroup/colors/v_line_color = Color(1, 1, 1, 0)
 AnimationTrackEditGroup/constants/h_separation = 9
 AnimationTrackEditGroup/styles/header = SubResource("StyleBoxFlat_h2xx7")
 BottomPanelButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
-BottomPanelButton/styles/hover_pressed = SubResource("StyleBoxFlat_jduyo")
+BottomPanelButton/styles/hover_pressed = SubResource("StyleBoxFlat_8mch4")
 BottomPanelButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 BottomPanelButton/styles/pressed = SubResource("StyleBoxFlat_1pq5m")
 Button/colors/font_color = Color(1, 1, 1, 0.666667)
@@ -911,13 +923,13 @@ LineEdit/styles/focus = SubResource("StyleBoxFlat_cfx35")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_0nfa3")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_fdq0g")
 MainMenuBar/styles/hover = SubResource("StyleBoxFlat_jduyo")
-MainMenuBar/styles/hover_pressed = SubResource("StyleBoxFlat_jduyo")
+MainMenuBar/styles/hover_pressed = SubResource("StyleBoxFlat_8mch4")
 MainMenuBar/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 MainMenuBar/styles/pressed = SubResource("StyleBoxFlat_fkpl4")
 MainScreenButton/styles/hover = SubResource("StyleBoxFlat_jduyo")
 MainScreenButton/styles/hover_mirrored = SubResource("StyleBoxFlat_jduyo")
-MainScreenButton/styles/hover_pressed = SubResource("StyleBoxFlat_jduyo")
-MainScreenButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_jduyo")
+MainScreenButton/styles/hover_pressed = SubResource("StyleBoxFlat_8mch4")
+MainScreenButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_8mch4")
 MainScreenButton/styles/normal = SubResource("StyleBoxFlat_sxnkh")
 MainScreenButton/styles/normal_mirrored = SubResource("StyleBoxFlat_sxnkh")
 MainScreenButton/styles/pressed = SubResource("StyleBoxFlat_sxnkh")
