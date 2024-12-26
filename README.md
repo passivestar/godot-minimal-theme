@@ -27,6 +27,10 @@ Here are my personal recommendations:
 
 - Main Font: [Inter](https://rsms.me/inter/)
 
+## Compatibility
+
+This theme was tested with Godot 4.3 and 4.4. Latest Godot version is recommended because Godot always evolves in terms of what can be themed. Some of the PRs were opened by me to help this theme reach its full potential.
+
 ## Credits
 
 - The idea for embedding theme generation code into the resource to support editor settings was suggested by [Yuri Sizov](https://github.com/YuriSizov). You can read his article about it [here](https://humnom.net/thoughts/6765836d-make-smarter-editor-themes-in-godot.html).
