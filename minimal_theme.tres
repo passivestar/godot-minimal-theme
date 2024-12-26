@@ -43,7 +43,7 @@ func _init() -> void:
 
 	# Ensure minimum contrast with the light theme. The default
 	# contrast makes it hard to see the UI elements
-	if not dark_theme and contrast < 0:
+	if not dark_theme and contrast < 0 and contrast > -0.4:
 		contrast = -0.4
 
 	# Main stylebox that most styleboxes duplicate
