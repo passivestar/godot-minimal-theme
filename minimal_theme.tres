@@ -111,15 +111,15 @@ func _init() -> void:
 	set_color('v_line_primary_color', 'AnimationTimelineEdit', mono_color * Color(1, 1, 1, 0.4))
 	set_color('v_line_secondary_color', 'AnimationTimelineEdit', mono_color * Color(1, 1, 1, 0.08))
 
-	set_constant('text_primary_margin', 'AnimationTimelineEdit', base_margin * 0.5 * scale)
-	set_constant('text_secondary_margin', 'AnimationTimelineEdit', base_margin * 0.25 * scale)
+	set_constant('text_primary_margin', 'AnimationTimelineEdit', base_margin * 0.75 * scale)
+	set_constant('text_secondary_margin', 'AnimationTimelineEdit', base_margin * 0.5 * scale)
 	set_constant('v_line_primary_margin', 'AnimationTimelineEdit', base_margin * scale)
 	set_constant('v_line_primary_width', 'AnimationTimelineEdit', ceil(2 * scale))
 	set_constant('v_line_secondary_margin', 'AnimationTimelineEdit', base_margin * 1.5 * scale)
 	set_constant('v_line_secondary_width', 'AnimationTimelineEdit', ceil(scale))
 
 	var sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(0.75, 0.7)
+	sb.bg_color = _get_base_color(0.55, 0.7)
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_1, floor(scale))
 	set_stylebox('time_available', 'AnimationTimelineEdit', sb)
