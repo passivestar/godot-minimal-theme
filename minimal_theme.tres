@@ -12,34 +12,43 @@ var dark_theme : bool
 func _init() -> void:
 	# Editor Settings
 
-	var settings := EditorInterface.get_editor_settings()
+	var settings : EditorSettings = EditorInterface.get_editor_settings()
 
-	base_color = settings.get_setting('interface/theme/base_color') as Color
-	contrast = settings.get_setting('interface/theme/contrast') as float
+	@warning_ignore('unsafe_cast')
+	base_color = settings.get_setting('interface/theme/base_color')
+	@warning_ignore('unsafe_cast')
+	contrast = settings.get_setting('interface/theme/contrast')
 	scale = EditorInterface.get_editor_scale()
 
-	var accent_color := settings.get_setting('interface/theme/accent_color') as Color
-	var base_spacing := settings.get_setting('interface/theme/base_spacing') as int
-	var extra_spacing := settings.get_setting('interface/theme/additional_spacing') as int
-	var corner_radius := settings.get_setting('interface/theme/corner_radius') as int
-	var icon_and_font_color := settings.get_setting('interface/theme/icon_and_font_color') as int
-	var relationship_line_opacity := settings.get_setting('interface/theme/relationship_line_opacity') as float
-	var draw_extra_borders := settings.get_setting('interface/theme/draw_extra_borders') as bool
+	@warning_ignore('unsafe_cast')
+	var accent_color : Color = settings.get_setting('interface/theme/accent_color')
+	@warning_ignore('unsafe_cast')
+	var base_spacing : int = settings.get_setting('interface/theme/base_spacing')
+	@warning_ignore('unsafe_cast')
+	var extra_spacing : int = settings.get_setting('interface/theme/additional_spacing')
+	@warning_ignore('unsafe_cast')
+	var corner_radius : int = settings.get_setting('interface/theme/corner_radius')
+	@warning_ignore('unsafe_cast')
+	var icon_and_font_color : int = settings.get_setting('interface/theme/icon_and_font_color')
+	@warning_ignore('unsafe_cast')
+	var relationship_line_opacity : float = settings.get_setting('interface/theme/relationship_line_opacity')
+	@warning_ignore('unsafe_cast')
+	var draw_extra_borders : bool = settings.get_setting('interface/theme/draw_extra_borders')
 
 	# Globals
 
-	var base_margin = base_spacing
-	var increased_margin = base_spacing + extra_spacing * 0.75
-	var popup_margin = base_margin * 2.4
+	var base_margin : float = base_spacing
+	var increased_margin : float = base_spacing + extra_spacing * 0.75
+	var popup_margin : float = base_margin * 2.4
 
 	dark_theme = base_color.get_luminance() < 0.5
 	if icon_and_font_color != 0: # ColorMode.AUTO_COLOR
 		dark_theme = icon_and_font_color == 1 # ColorMode.DARK
 
-	var mono_color = Color.WHITE if dark_theme else Color.BLACK
+	var mono_color : Color = Color.WHITE if dark_theme else Color.BLACK
 
-	var extra_border_color_1 = Color(1, 1, 1, 0.4) if dark_theme else Color(0, 0, 0, 0.4)
-	var extra_border_color_2 = Color(1, 1, 1, 0.2) if dark_theme else Color(0, 0, 0, 0.2)
+	var extra_border_color_1 : Color = Color(1, 1, 1, 0.4) if dark_theme else Color(0, 0, 0, 0.4)
+	var extra_border_color_2 : Color = Color(1, 1, 1, 0.2) if dark_theme else Color(0, 0, 0, 0.2)
 
 	# Ensure minimum contrast with the light theme. The default
 	# contrast makes it hard to see the UI elements
@@ -47,56 +56,56 @@ func _init() -> void:
 		contrast = -0.4
 
 	# Main stylebox that most styleboxes duplicate
-	var base_sb := StyleBoxFlat.new()
+	var base_sb : StyleBoxFlat = StyleBoxFlat.new()
 	base_sb.bg_color = base_color
 	base_sb.set_content_margin_all(base_margin * scale)
-	base_sb.set_corner_radius_all(corner_radius * scale)
+	base_sb.set_corner_radius_all(int(corner_radius * scale))
 
 	# Non-transparent buttons will potentially blend worse with background
 	# than transparent ones, however this is currently only noticeable on the Close
 	# button of editor settings, and it probably shouldn't even exist
-	var button_sb := base_sb.duplicate()
+	var button_sb : StyleBoxFlat = base_sb.duplicate()
 	button_sb.bg_color = _get_base_color(0.3, 0.8)
 	if draw_extra_borders:
-		_set_border(button_sb, extra_border_color_1, floor(scale))
+		_set_border(button_sb, extra_border_color_1, floorf(scale))
 	else:
 		_set_border(button_sb, _get_base_color(0.5, 0.7), 1, true)
 	_set_margin(button_sb, base_margin * 2, base_margin * 1.5, base_margin * 2, base_margin * 1.5)
 
-	var button_hover_sb := button_sb.duplicate()
+	var button_hover_sb : StyleBoxFlat = button_sb.duplicate()
 	button_hover_sb.bg_color = _get_base_color(0.5, 0.7)
 	if draw_extra_borders:
-		_set_border(button_hover_sb, extra_border_color_1, floor(scale))
+		_set_border(button_hover_sb, extra_border_color_1, floorf(scale))
 	else:
 		_set_border(button_hover_sb, _get_base_color(0.7, 0.7), 1, true)
 
-	var button_pressed_sb := button_sb.duplicate()
+	var button_pressed_sb : StyleBoxFlat = button_sb.duplicate()
 	button_pressed_sb.bg_color = _get_base_color(0.7, 0.7)
 	if draw_extra_borders:
-		_set_border(button_pressed_sb, extra_border_color_1, floor(scale))
+		_set_border(button_pressed_sb, extra_border_color_1, floorf(scale))
 	else:
 		_set_border(button_pressed_sb, _get_base_color(0.9, 0.7), 1, true)
 
-	var button_disabled_sb := button_sb.duplicate()
+	var button_disabled_sb : StyleBoxFlat = button_sb.duplicate()
 	button_disabled_sb.set_border_width_all(0)
 	button_disabled_sb.bg_color = _get_base_color(0.2, 0.7)
 	if draw_extra_borders:
-		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), floor(scale))
+		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), floorf(scale))
 
-	var flat_button_hover_sb := base_sb.duplicate()
+	var flat_button_hover_sb : StyleBoxFlat = base_sb.duplicate()
 	_set_margin(flat_button_hover_sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
 	flat_button_hover_sb.bg_color = _get_base_color(0.3, 0.7)
 	if draw_extra_borders:
-		_set_border(flat_button_hover_sb, extra_border_color_1, floor(scale))
+		_set_border(flat_button_hover_sb, extra_border_color_1, floorf(scale))
 
-	var flat_button_pressed_sb := flat_button_hover_sb.duplicate()
+	var flat_button_pressed_sb : StyleBoxFlat = flat_button_hover_sb.duplicate()
 	flat_button_pressed_sb.bg_color = _get_base_color(0.5, 0.7)
 
-	var empty_sb := StyleBoxEmpty.new()
-	var empty_margin_sb := StyleBoxEmpty.new()
-	empty_margin_sb.set_content_margin_all(base_margin * 2 * scale)
-	var empty_wide_sb := StyleBoxEmpty.new()
-	_set_margin(empty_wide_sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
+	var base_empty_sb : StyleBoxEmpty = StyleBoxEmpty.new()
+	var base_empty_margin_sb : StyleBoxEmpty = StyleBoxEmpty.new()
+	base_empty_margin_sb.set_content_margin_all(base_margin * 2 * scale)
+	var base_empty_wide_sb : StyleBoxEmpty = StyleBoxEmpty.new()
+	_set_margin(base_empty_wide_sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
 
 	# Animation editor
 
@@ -111,17 +120,17 @@ func _init() -> void:
 	set_color('v_line_primary_color', 'AnimationTimelineEdit', mono_color * Color(1, 1, 1, 0.4))
 	set_color('v_line_secondary_color', 'AnimationTimelineEdit', mono_color * Color(1, 1, 1, 0.08))
 
-	set_constant('text_primary_margin', 'AnimationTimelineEdit', base_margin * 0.75 * scale)
-	set_constant('text_secondary_margin', 'AnimationTimelineEdit', base_margin * 0.5 * scale)
-	set_constant('v_line_primary_margin', 'AnimationTimelineEdit', base_margin * scale)
-	set_constant('v_line_primary_width', 'AnimationTimelineEdit', ceil(2 * scale))
-	set_constant('v_line_secondary_margin', 'AnimationTimelineEdit', base_margin * 1.5 * scale)
-	set_constant('v_line_secondary_width', 'AnimationTimelineEdit', ceil(scale))
+	set_constant('text_primary_margin', 'AnimationTimelineEdit', int(base_margin * 0.75 * scale))
+	set_constant('text_secondary_margin', 'AnimationTimelineEdit', int(base_margin * 0.5 * scale))
+	set_constant('v_line_primary_margin', 'AnimationTimelineEdit', int(base_margin * scale))
+	set_constant('v_line_primary_width', 'AnimationTimelineEdit', int(ceilf(2 * scale)))
+	set_constant('v_line_secondary_margin', 'AnimationTimelineEdit', int(base_margin * 1.5 * scale))
+	set_constant('v_line_secondary_width', 'AnimationTimelineEdit', int(ceilf(scale)))
 
-	var sb = base_sb.duplicate()
+	var sb : StyleBoxFlat = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.55, 0.7)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floor(scale))
+		_set_border(sb, extra_border_color_1, floorf(scale))
 	set_stylebox('time_available', 'AnimationTimelineEdit', sb)
 
 	sb = base_sb.duplicate()
@@ -129,7 +138,7 @@ func _init() -> void:
 	set_stylebox('time_unavailable', 'AnimationTimelineEdit', sb)
 
 	set_color('h_line_color', 'AnimationTrackEdit', Color.TRANSPARENT)
-	set_constant('h_separation', 'AnimationTrackEdit', base_margin * 1.5 * scale)
+	set_constant('h_separation', 'AnimationTrackEdit', int(base_margin * 1.5 * scale))
 
 	sb = base_sb.duplicate()
 	sb.draw_center = false
@@ -148,7 +157,7 @@ func _init() -> void:
 	set_color('bg_color', 'AnimationTrackEditGroup', _get_base_color(-0.2))
 	set_color('h_line_color', 'AnimationTrackEditGroup', Color.TRANSPARENT)
 	set_color('v_line_color', 'AnimationTrackEditGroup', Color.TRANSPARENT)
-	set_constant('h_separation', 'AnimationTrackEditGroup', base_margin * 2 * scale)
+	set_constant('h_separation', 'AnimationTrackEditGroup', int(base_margin * 2 * scale))
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.6)
@@ -158,9 +167,9 @@ func _init() -> void:
 	# Bottom panel
 
 	# Use bigger margin for buttons in bottom panel to make them easier to press
-	sb = empty_sb.duplicate()
-	_set_margin(sb, base_margin * 2, base_margin * 1.2, base_margin * 2, base_margin * 1.2)
-	set_stylebox('normal', 'BottomPanelButton', empty_wide_sb)
+	var empty_sb : StyleBoxEmpty = base_empty_sb.duplicate()
+	_set_margin(empty_sb, base_margin * 2, base_margin * 1.2, base_margin * 2, base_margin * 1.2)
+	set_stylebox('normal', 'BottomPanelButton', base_empty_wide_sb)
 
 	sb = flat_button_hover_sb.duplicate()
 	_set_margin(sb, base_margin * 2, base_margin * 1.2, base_margin * 2, base_margin * 1.2)
@@ -184,7 +193,7 @@ func _init() -> void:
 	set_constant('outline_size', 'Button', 0)
 	set_stylebox('disabled', 'Button', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'Button', button_disabled_sb)
-	set_stylebox('focus', 'Button', empty_sb)
+	set_stylebox('focus', 'Button', base_empty_sb)
 	set_stylebox('hover', 'Button', button_hover_sb)
 	set_stylebox('hover_mirrored', 'Button', button_hover_sb)
 	set_stylebox('hover_pressed', 'Button', button_pressed_sb)
@@ -229,8 +238,8 @@ func _init() -> void:
 	set_color('warning_color', 'Editor', Color(0.95, 0.855, 0.57) if dark_theme else Color(0.82, 0.56, 0.1))
 
 	set_color('prop_subsection', 'Editor', Color.TRANSPARENT)
-	set_constant('top_bar_separation', 'Editor', base_margin * scale)
-	set_constant('window_border_margin', 'Editor', base_margin * scale)
+	set_constant('top_bar_separation', 'Editor', int(base_margin * scale))
+	set_constant('window_border_margin', 'Editor', int(base_margin * scale))
 
 	# EditorHelpBit
 
@@ -238,52 +247,52 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(-0.3 if dark_theme else -0.7)
 	_set_margin(sb, base_margin * 2, base_margin, base_margin * 2, base_margin)
 	sb.set_corner_radius_all(0)
-	sb.corner_radius_bottom_right = corner_radius * scale
-	sb.corner_radius_bottom_left = corner_radius * scale
+	sb.corner_radius_bottom_right = int(corner_radius * scale)
+	sb.corner_radius_bottom_left = int(corner_radius * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('normal', 'EditorHelpBitContent', sb)
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.55 if dark_theme else -0.9) # Same as secondary tree
 	_set_margin(sb, base_margin * 2, base_margin, base_margin * 2, base_margin)
 	sb.set_corner_radius_all(0)
-	sb.corner_radius_top_right = corner_radius * scale
-	sb.corner_radius_top_left = corner_radius * scale
+	sb.corner_radius_top_right = int(corner_radius * scale)
+	sb.corner_radius_top_left = int(corner_radius * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('normal', 'EditorHelpBitTitle', sb)
 
 	# EditorInspector
 
-	set_constant('v_separation', 'EditorInspector', base_margin * 0.85 * scale)
+	set_constant('v_separation', 'EditorInspector', int(base_margin * 0.85 * scale))
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.2, 0.8)
 	_set_margin(sb, 0, base_margin * 1.2, 0, base_margin * 1.2)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('bg', 'EditorInspectorCategory', sb)
-	set_constant('h_separation', 'EditorInspectorSection', base_margin * scale)
+	set_constant('h_separation', 'EditorInspectorSection', int(base_margin * scale))
 
 	# EditorLogFilterButton
 
 	# Hover and pressed styles are swapped for toggle buttons on purpose
 	set_stylebox('hover', 'EditorLogFilterButton', flat_button_pressed_sb)
 	set_stylebox('pressed', 'EditorLogFilterButton', flat_button_hover_sb)
-	set_stylebox('normal', 'EditorLogFilterButton', empty_sb)
+	set_stylebox('normal', 'EditorLogFilterButton', base_empty_sb)
 
 
 	# EditorProperty
 
 	set_color('property_color', 'EditorProperty', mono_color * Color(1, 1, 1, 0.6))
 	set_color('warning_color', 'EditorProperty', Color(0.95, 0.855, 0.57, 1) if dark_theme else Color(0.82, 0.56, 0.1))
-	set_stylebox('bg', 'EditorProperty', empty_sb)
-	set_stylebox('bg_selected', 'EditorProperty', empty_sb)
+	set_stylebox('bg', 'EditorProperty', base_empty_sb)
+	set_stylebox('bg_selected', 'EditorProperty', base_empty_sb)
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8) # Same as LineEdit normal
 	sb.set_content_margin_all(base_margin * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('child_bg', 'EditorProperty', sb)
 
 	# EditorSpinSlider
@@ -348,10 +357,10 @@ func _init() -> void:
 	set_color('icon_disabled_color', 'FlatButton', mono_color * Color(1, 1, 1, 0.3))
 	set_color('icon_normal_color', 'FlatButton', mono_color * Color(1, 1, 1, 0.7))
 
-	set_stylebox('disabled', 'FlatButton', empty_wide_sb)
-	set_stylebox('disabled_mirrored', 'FlatButton', empty_wide_sb)
-	set_stylebox('normal', 'FlatButton', empty_wide_sb)
-	set_stylebox('normal_mirrored', 'FlatButton', empty_wide_sb)
+	set_stylebox('disabled', 'FlatButton', base_empty_wide_sb)
+	set_stylebox('disabled_mirrored', 'FlatButton', base_empty_wide_sb)
+	set_stylebox('normal', 'FlatButton', base_empty_wide_sb)
+	set_stylebox('normal_mirrored', 'FlatButton', base_empty_wide_sb)
 	set_stylebox('hover', 'FlatButton', flat_button_hover_sb)
 	set_stylebox('hover_mirrored', 'FlatButton', flat_button_hover_sb)
 	set_stylebox('hover_pressed', 'FlatButton', flat_button_pressed_sb)
@@ -371,11 +380,11 @@ func _init() -> void:
 	set_color('icon_disabled_color', 'FlatMenuButton', mono_color * Color(1, 1, 1, 0.3))
 	set_color('icon_normal_color', 'FlatMenuButton', mono_color * Color(1, 1, 1, 0.7))
 
-	set_stylebox('disabled', 'FlatMenuButton', empty_wide_sb)
-	set_stylebox('disabled_mirrored', 'FlatMenuButton', empty_wide_sb)
-	set_stylebox('focus', 'FlatMenuButton', empty_wide_sb)
-	set_stylebox('normal', 'FlatMenuButton', empty_wide_sb)
-	set_stylebox('normal_mirrored', 'FlatMenuButton', empty_wide_sb)
+	set_stylebox('disabled', 'FlatMenuButton', base_empty_wide_sb)
+	set_stylebox('disabled_mirrored', 'FlatMenuButton', base_empty_wide_sb)
+	set_stylebox('focus', 'FlatMenuButton', base_empty_wide_sb)
+	set_stylebox('normal', 'FlatMenuButton', base_empty_wide_sb)
+	set_stylebox('normal_mirrored', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('hover', 'FlatMenuButton', flat_button_hover_sb)
 	set_stylebox('hover_mirrored', 'FlatMenuButton', flat_button_hover_sb)
 	set_stylebox('hover_pressed', 'FlatMenuButton', flat_button_pressed_sb)
@@ -389,22 +398,22 @@ func _init() -> void:
 
 	# Box Containers
 
-	set_constant('separation', 'HBoxContainer', 2 * scale)
-	set_constant('separation', 'VBoxContainer', 2 * scale)
+	set_constant('separation', 'HBoxContainer', int(2 * scale))
+	set_constant('separation', 'VBoxContainer', int(2 * scale))
 
 	# Split Containers
 
 	set_constant('autohide', 'HSplitContainer', 1)
-	set_constant('minimum_grab_thickness', 'HSplitContainer', base_margin * 1.5 * scale)
-	set_constant('separation', 'HSplitContainer', ceil(2 * scale))
+	set_constant('minimum_grab_thickness', 'HSplitContainer', int(base_margin * 1.5 * scale))
+	set_constant('separation', 'HSplitContainer', int(ceilf(2 * scale)))
 
 	set_constant('autohide', 'VSplitContainer', 1)
-	set_constant('minimum_grab_thickness', 'VSplitContainer', base_margin * 1.5 * scale)
-	set_constant('separation', 'VSplitContainer', ceil(2 * scale))
+	set_constant('minimum_grab_thickness', 'VSplitContainer', int(base_margin * 1.5 * scale))
+	set_constant('separation', 'VSplitContainer', int(ceilf(2 * scale)))
 
 	# InspectorActionButton
 
-	set_constant('h_separation', 'InspectorActionButton', base_margin * 2 * scale)
+	set_constant('h_separation', 'InspectorActionButton', int(base_margin * 2 * scale))
 	set_stylebox('disabled', 'InspectorActionButton', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'InspectorActionButton', button_disabled_sb)
 	set_stylebox('normal', 'InspectorActionButton', button_sb)
@@ -417,13 +426,13 @@ func _init() -> void:
 	# ItemList
 
 	set_color('guide_color', 'ItemList', Color.TRANSPARENT)
-	set_constant('v_separation', 'ItemList', base_margin * 1.5 * scale)
+	set_constant('v_separation', 'ItemList', int(base_margin * 1.5 * scale))
 
 	sb = base_sb.duplicate()
 	sb.bg_color = mono_color * Color(1, 1, 1, 0.04)
 	set_stylebox('cursor', 'ItemList', sb)
 	set_stylebox('cursor_unfocused', 'ItemList', sb)
-	set_stylebox('focus', 'ItemList', empty_sb)
+	set_stylebox('focus', 'ItemList', base_empty_sb)
 
 	set_stylebox('hovered', 'ItemList', flat_button_hover_sb)
 	set_stylebox('selected', 'ItemList', flat_button_hover_sb)
@@ -431,25 +440,25 @@ func _init() -> void:
 	set_stylebox('hovered_selected', 'ItemList', flat_button_hover_sb)
 	set_stylebox('hovered_selected_focus', 'ItemList', flat_button_hover_sb)
 
-	set_stylebox('panel', 'ItemList', empty_margin_sb)
+	set_stylebox('panel', 'ItemList', base_empty_margin_sb)
 
 	# Label
 
 	set_color('font_color', 'Label', mono_color * Color(1, 1, 1, 0.7))
 
-	sb = empty_sb.duplicate()
+	empty_sb = base_empty_sb.duplicate()
 	# Keeping vertical margin low otherwise quick open looks bad
-	_set_margin(sb, base_margin * 2, base_margin, base_margin * 2, base_margin)
-	set_stylebox('normal', 'Label', sb)
+	_set_margin(empty_sb, base_margin * 2, base_margin, base_margin * 2, base_margin)
+	set_stylebox('normal', 'Label', empty_sb)
 
 	# LineEdit and TextEdit
 
 	set_color('font_placeholder_color', 'LineEdit', mono_color * Color(1, 1, 1, 0.4))
 
 	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(-1.2 if dark_theme else -2)
+	sb.bg_color = _get_base_color(-1.2 if dark_theme else -2.0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floor(scale))
+		_set_border(sb, extra_border_color_1, floorf(scale))
 	_set_margin(sb, base_margin * 2, base_margin * 0.75, base_margin * 2, base_margin * 0.75)
 	set_stylebox('focus', 'LineEdit', sb)
 	set_stylebox('focus', 'TextEdit', sb)
@@ -467,29 +476,29 @@ func _init() -> void:
 
 	# MainMenuBar
 
-	set_stylebox('normal', 'MainMenuBar', empty_wide_sb)
+	set_stylebox('normal', 'MainMenuBar', base_empty_wide_sb)
 	set_stylebox('hover', 'MainMenuBar', flat_button_hover_sb)
 	set_stylebox('hover_pressed', 'MainMenuBar', flat_button_pressed_sb)
 	set_stylebox('pressed', 'MainMenuBar', flat_button_pressed_sb)
 
 	# MainScreenButton
 
-	set_stylebox('normal', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('normal_mirrored', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('hover', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('hover_mirrored', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('hover_pressed', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('hover_pressed_mirrored', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('pressed', 'MainScreenButton', empty_wide_sb)
-	set_stylebox('pressed_mirrored', 'MainScreenButton', empty_wide_sb)
+	set_stylebox('normal', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('normal_mirrored', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('hover', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('hover_mirrored', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('hover_pressed', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('hover_pressed_mirrored', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('pressed', 'MainScreenButton', base_empty_wide_sb)
+	set_stylebox('pressed_mirrored', 'MainScreenButton', base_empty_wide_sb)
 
 	# MenuButton
 
-	set_stylebox('disabled', 'MenuButton', empty_wide_sb)
-	set_stylebox('disabled_mirrored', 'MenuButton', empty_wide_sb)
-	set_stylebox('focus', 'MenuButton', empty_wide_sb)
-	set_stylebox('normal', 'MenuButton', empty_wide_sb)
-	set_stylebox('normal_mirrored', 'MenuButton', empty_wide_sb)
+	set_stylebox('disabled', 'MenuButton', base_empty_wide_sb)
+	set_stylebox('disabled_mirrored', 'MenuButton', base_empty_wide_sb)
+	set_stylebox('focus', 'MenuButton', base_empty_wide_sb)
+	set_stylebox('normal', 'MenuButton', base_empty_wide_sb)
+	set_stylebox('normal_mirrored', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('pressed', 'MenuButton', flat_button_pressed_sb)
 	set_stylebox('pressed_mirrored', 'MenuButton', flat_button_pressed_sb)
 	set_stylebox('hover', 'MenuButton', flat_button_hover_sb)
@@ -499,7 +508,7 @@ func _init() -> void:
 
 	# OptionButton
 
-	set_constant('arrow_margin', 'OptionButton', base_margin * 3.5)
+	set_constant('arrow_margin', 'OptionButton', int(base_margin * 3.5))
 
 	set_color('font_color', 'OptionButton', mono_color * Color(1, 1, 1, 0.7))
 	set_color('font_disabled_color', 'OptionButton', mono_color * Color(1, 1, 1, 0.3))
@@ -512,7 +521,7 @@ func _init() -> void:
 
 	set_stylebox('disabled', 'OptionButton', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'OptionButton', button_disabled_sb)
-	set_stylebox('focus', 'OptionButton', empty_sb)
+	set_stylebox('focus', 'OptionButton', base_empty_sb)
 	set_stylebox('normal', 'OptionButton', button_sb)
 	set_stylebox('normal_mirrored', 'OptionButton', button_sb)
 	set_stylebox('pressed', 'OptionButton', button_pressed_sb)
@@ -524,8 +533,8 @@ func _init() -> void:
 
 	# Popups
 
-	set_constant('item_start_padding', 'PopupMenu', popup_margin * scale)
-	set_constant('v_separation', 'PopupMenu', base_margin * 1.75 * scale)
+	set_constant('item_start_padding', 'PopupMenu', int(popup_margin * scale))
+	set_constant('v_separation', 'PopupMenu', int(base_margin * 1.75 * scale))
 
 	set_stylebox('hover', 'PopupMenu', flat_button_hover_sb)
 
@@ -534,35 +543,35 @@ func _init() -> void:
 	sb.set_content_margin_all(popup_margin)
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'PopupMenu', sb)
 
-	var line_sb := StyleBoxLine.new()
+	var line_sb : StyleBoxLine = StyleBoxLine.new()
 	line_sb.color = _get_base_color(0.1, 0.8)
 	line_sb.grow_begin = base_margin * -1.5 * scale
 	line_sb.grow_end = base_margin * -1.5 * scale
-	line_sb.thickness = ceil(scale)
+	line_sb.thickness = int(ceilf(scale))
 	set_stylebox('labeled_separator_left', 'PopupMenu', line_sb)
 	set_stylebox('labeled_separator_right', 'PopupMenu', line_sb)
 	set_stylebox('separator', 'PopupMenu', line_sb)
 
-	set_stylebox('panel', 'PanelContainer', empty_wide_sb)
+	set_stylebox('panel', 'PanelContainer', base_empty_wide_sb)
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8, 0.9)
 	sb.shadow_color = Color(0, 0, 0, 0.3)
-	sb.shadow_size = base_margin * 0.75 * scale
+	sb.shadow_size = int(base_margin * 0.75 * scale)
 	sb.set_content_margin_all(popup_margin)
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'PopupPanel', sb)
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8, 0.9)
 	sb.set_content_margin_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'TooltipPanel', sb)
 
 	# ProgressBar
@@ -573,13 +582,13 @@ func _init() -> void:
 	sb.expand_margin_bottom = base_margin * 0.5 * scale
 	sb.set_content_margin_all(base_margin * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('background', 'ProgressBar', sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = _get_base_color(0.4, 0.8)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floor(scale))
+		_set_border(sb, extra_border_color_1, floorf(scale))
 	set_stylebox('fill', 'ProgressBar', sb)
 
 	# RichTextLabel
@@ -591,14 +600,14 @@ func _init() -> void:
 
 	# ScrollContainer
 
-	set_stylebox('focus', 'ScrollContainer', empty_sb)
+	set_stylebox('focus', 'ScrollContainer', base_empty_sb)
 
 	# SplitContainer
 
-	set_constant('minimum_grab_thickness', 'SplitContainer', base_margin * 1.5 * scale)
-	set_constant('separation', 'SplitContainer', base_margin * 0.75 * scale)
+	set_constant('minimum_grab_thickness', 'SplitContainer', int(base_margin * 1.5 * scale))
+	set_constant('separation', 'SplitContainer', int(base_margin * 0.75 * scale))
 
-	var empty_texture := PlaceholderTexture2D.new()
+	var empty_texture : PlaceholderTexture2D = PlaceholderTexture2D.new()
 	empty_texture.size = Vector2(0, 0)
 	set_icon('h_grabber', 'SplitContainer', empty_texture)
 	set_icon('v_grabber', 'SplitContainer', empty_texture)
@@ -608,8 +617,8 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	_set_margin(sb, base_margin * 3.5, base_margin * 2, base_margin * 3.5, base_margin * 1.5)
 	sb.set_corner_radius_all(0)
-	sb.border_width_top = 2 * scale
-	var col = accent_color
+	sb.border_width_top = int(2 * scale)
+	var col : Color = accent_color
 	col.v = 0.5
 	col.s = 0.5
 	sb.border_color = col
@@ -651,17 +660,17 @@ func _init() -> void:
 	set_constant('children_hl_line_width', 'Tree', 0)
 	set_constant('draw_guides', 'Tree', 0)
 	set_constant('draw_relationship_lines', 'Tree', 1)
-	set_constant('inner_item_margin_left', 'Tree', base_margin * scale)
-	set_constant('inner_item_margin_right', 'Tree', base_margin * scale)
-	set_constant('parent_hl_line_width', 'Tree', ceil(scale))
+	set_constant('inner_item_margin_left', 'Tree', int(base_margin * scale))
+	set_constant('inner_item_margin_right', 'Tree', int(base_margin * scale))
+	set_constant('parent_hl_line_width', 'Tree', int(ceilf(scale)))
 	set_constant('relationship_line_width', 'Tree', 0)
-	set_constant('v_separation', 'Tree', ceil(scale) + ceil(extra_spacing * scale))
+	set_constant('v_separation', 'Tree', int(ceilf(scale) + ceilf(extra_spacing * scale)))
 
-	set_stylebox('panel', 'Tree', empty_margin_sb)
+	set_stylebox('panel', 'Tree', base_empty_margin_sb)
 
 	# Leaving focus empty for trees and scroll containers because there's no way to
 	# make focus indication look not janky when only a part of a dock is highlighted
-	set_stylebox('focus', 'Tree', empty_sb)
+	set_stylebox('focus', 'Tree', base_empty_sb)
 
 	# Rounded corners look a little janky in tree titles because there's no way to
 	# introduce gaps between columns, however not having rounded corners looks even worse
@@ -695,15 +704,15 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.55 if dark_theme else -0.9)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floor(scale))
+		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'TreeSecondary', sb)	
 	set_stylebox('panel', 'ItemListSecondary', sb)	
 
 # Lighten base color in dark theme, darken in light theme, clamp
 func _get_base_color(brightness_offset: float = 0, saturation_multiplier: float = 1) -> Color:
-	var dark = dark_theme if brightness_offset >= 0 else !dark_theme
-	var color = Color(base_color)
-	color.v = clampf(lerpf(color.v, 1 if dark else 0, abs(contrast * brightness_offset)), 0, 1)
+	var dark : bool = dark_theme if brightness_offset >= 0 else !dark_theme
+	var color : Color = Color(base_color)
+	color.v = clampf(lerpf(color.v, 1 if dark else 0, absf(contrast * brightness_offset)), 0, 1)
 	color.s *= saturation_multiplier
 	return color
 
@@ -715,10 +724,10 @@ func _set_margin(sb: StyleBox, left: float, top: float, right: float = left, bot
 	sb.content_margin_bottom = botton * scale
 
 # Shorthand border setter
-func _set_border(sb: StyleBox, color: Color, width: float = 1, blend: bool = false) -> void:
+func _set_border(sb: StyleBoxFlat, color: Color, width: float = 1, blend: bool = false) -> void:
 	sb.border_color = color
 	sb.border_blend = blend
-	sb.set_border_width_all(ceil(width * scale))
+	sb.set_border_width_all(int(ceilf(width * scale)))
 "
 
 
