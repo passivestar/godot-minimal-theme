@@ -717,11 +717,11 @@ func _get_base_color(brightness_offset: float = 0, saturation_multiplier: float 
 	return color
 
 # Shorthand content margin setter
-func _set_margin(sb: StyleBox, left: float, top: float, right: float = left, botton: float = top) -> void:
+func _set_margin(sb: StyleBox, left: float, top: float, right: float = left, bottom: float = top) -> void:
 	sb.content_margin_left = left * scale
 	sb.content_margin_top = top * scale
 	sb.content_margin_right = right * scale
-	sb.content_margin_bottom = botton * scale
+	sb.content_margin_bottom = bottom * scale
 
 # Shorthand border setter
 func _set_border(sb: StyleBoxFlat, color: Color, width: float = 1, blend: bool = false) -> void:
