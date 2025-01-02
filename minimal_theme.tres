@@ -37,6 +37,8 @@ func _init() -> void:
 
 	# Globals
 
+	base_spacing = maxi(base_spacing, 2) # Base spacing below 2 looks broken
+
 	var base_margin : float = base_spacing
 	var increased_margin : float = base_spacing + extra_spacing * 0.75
 	var popup_margin : float = base_margin * 2.4
