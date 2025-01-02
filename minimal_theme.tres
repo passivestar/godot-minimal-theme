@@ -707,8 +707,8 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(-0.55 if dark_theme else -0.9)
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_2, floorf(scale))
-	set_stylebox('panel', 'TreeSecondary', sb)	
-	set_stylebox('panel', 'ItemListSecondary', sb)	
+	set_stylebox('panel', 'TreeSecondary', sb)
+	set_stylebox('panel', 'ItemListSecondary', sb)
 
 # Lighten base color in dark theme, darken in light theme, clamp
 func _get_base_color(brightness_offset: float = 0, saturation_multiplier: float = 1) -> Color:
