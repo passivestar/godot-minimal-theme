@@ -659,7 +659,15 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.set_content_margin_all(increased_margin * 1.5 * scale)
 	sb.set_corner_radius_all(0)
+	sb.corner_radius_bottom_right = int(corner_radius * scale)
+	sb.corner_radius_bottom_left = int(corner_radius * scale)
 	set_stylebox('panel', 'TabContainer', sb)
+
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(-1.0)
+	sb.set_content_margin_all(0)
+	sb.set_corner_radius_all(0)	
+	set_stylebox('tabbar_background', 'TabContainer', sb)
 
 	# Tree
 
