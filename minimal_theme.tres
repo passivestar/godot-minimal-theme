@@ -41,7 +41,7 @@ func _init() -> void:
 
 	var base_margin : float = base_spacing
 	var increased_margin : float = base_spacing + extra_spacing * 0.75
-	var popup_margin : float = base_margin * 2.4
+	var popup_margin : float = maxf(base_margin * 2.4, 4.0 * scale)
 
 	dark_theme = base_color.get_luminance() < 0.5
 	if icon_and_font_color != 0: # ColorMode.AUTO_COLOR
@@ -542,7 +542,7 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8, 0.9)
-	sb.set_content_margin_all(popup_margin)
+	sb.set_content_margin_all(int(popup_margin * scale))
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_2, floorf(scale))
@@ -563,7 +563,7 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(-0.8, 0.9)
 	sb.shadow_color = Color(0, 0, 0, 0.3)
 	sb.shadow_size = int(base_margin * 0.75 * scale)
-	sb.set_content_margin_all(popup_margin)
+	sb.set_content_margin_all(int(popup_margin * scale))
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_2, floorf(scale))
@@ -575,6 +575,14 @@ func _init() -> void:
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'TooltipPanel', sb)
+
+	sb = base_sb.duplicate()
+	sb.set_content_margin_all(int(popup_margin * scale))
+	set_stylebox('panel', 'PopupDialog', sb)
+	set_stylebox('panel', 'AcceptDialog', sb)
+	set_stylebox('panel', 'EditorSettingsDialog', sb)
+	set_stylebox('panel', 'ProjectSettingsEditor', sb)
+	set_stylebox('panel', 'EditorAbout', sb)
 
 	# ProgressBar
 
