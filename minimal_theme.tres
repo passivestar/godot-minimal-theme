@@ -666,7 +666,7 @@ func _init() -> void:
 	set_constant('inner_item_margin_right', 'Tree', int(base_margin * scale))
 	set_constant('parent_hl_line_width', 'Tree', int(ceilf(scale)))
 	set_constant('relationship_line_width', 'Tree', 0)
-	set_constant('v_separation', 'Tree', int(ceilf(scale) + ceilf(extra_spacing * scale)))
+	set_constant('v_separation', 'Tree', int(base_margin * 0.25 * scale))
 
 	set_stylebox('panel', 'Tree', base_empty_margin_sb)
 
