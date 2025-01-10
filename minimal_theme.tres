@@ -107,7 +107,9 @@ func _init() -> void:
 	var base_empty_margin_sb : StyleBoxEmpty = StyleBoxEmpty.new()
 	base_empty_margin_sb.set_content_margin_all(base_margin * 2 * scale)
 	var base_empty_wide_sb : StyleBoxEmpty = StyleBoxEmpty.new()
-	_set_margin(base_empty_wide_sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
+	# Ensure minimum margin for wide flat buttons otherwise the topbar looks broken
+	var base_empty_wide_margin : float = maxf(base_margin, 3.0)
+	_set_margin(base_empty_wide_sb, base_empty_wide_margin * 1.5, base_empty_wide_margin, base_empty_wide_margin * 1.5, base_empty_wide_margin)
 
 	# Animation editor
 
