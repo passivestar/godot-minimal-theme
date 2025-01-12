@@ -584,6 +584,9 @@ func _init() -> void:
 	sb.set_content_margin_all(int(popup_margin * scale))
 	set_stylebox('panel', 'PopupDialog', sb)
 	set_stylebox('panel', 'AcceptDialog', sb)
+
+	sb = sb.duplicate()
+	sb.bg_color = _get_base_color(-1)
 	set_stylebox('panel', 'EditorSettingsDialog', sb)
 	set_stylebox('panel', 'ProjectSettingsEditor', sb)
 	set_stylebox('panel', 'EditorAbout', sb)
