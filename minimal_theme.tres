@@ -231,6 +231,8 @@ func _init() -> void:
 	set_color('box_selection_stroke_color', 'Editor', mono_color * Color(1, 1, 1, 0.4))
 	# Ruler in 2D view:
 	set_color('dark_color_2', 'Editor', Color(0, 0, 0, 0.3) if dark_theme else Color(1, 1, 1, 0.3))
+	# Shortcut tree cell background:
+	set_color('dark_color_3', 'Editor', _get_base_color(-0.8))
 
 	set_color('forward_plus_color', 'Editor', Color(0.54902, 0.752941, 0.392157))
 	set_color('gl_compatibility_color', 'Editor', Color(0.447059, 0.698039, 0.890196))
