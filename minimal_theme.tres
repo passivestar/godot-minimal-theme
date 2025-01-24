@@ -103,10 +103,16 @@ func _init() -> void:
 	var flat_button_pressed_sb : StyleBoxFlat = flat_button_hover_sb.duplicate()
 	flat_button_pressed_sb.bg_color = _get_base_color(0.5, 0.7)
 
-	var base_empty_sb : StyleBoxEmpty = StyleBoxEmpty.new()
-	var base_empty_margin_sb : StyleBoxEmpty = StyleBoxEmpty.new()
+	var base_empty_sb : StyleBoxFlat = base_sb.duplicate()
+	base_empty_sb.draw_center = false
+	base_empty_sb.set_content_margin_all(0)
+
+	var base_empty_margin_sb : StyleBoxFlat = base_sb.duplicate()
+	base_empty_margin_sb.draw_center = false
 	base_empty_margin_sb.set_content_margin_all(base_margin * 2 * scale)
-	var base_empty_wide_sb : StyleBoxEmpty = StyleBoxEmpty.new()
+
+	var base_empty_wide_sb : StyleBoxFlat = base_sb.duplicate()
+	base_empty_wide_sb.draw_center = false
 	# Ensure minimum margin for wide flat buttons otherwise the topbar looks broken
 	var base_empty_wide_margin : float = maxf(base_margin, 3.0)
 	_set_margin(base_empty_wide_sb, base_empty_wide_margin * 1.5, base_empty_wide_margin, base_empty_wide_margin * 1.5, base_empty_wide_margin)
@@ -171,7 +177,7 @@ func _init() -> void:
 	# Bottom panel
 
 	# Use bigger margin for buttons in bottom panel to make them easier to press
-	var empty_sb : StyleBoxEmpty = base_empty_sb.duplicate()
+	var empty_sb : StyleBoxFlat = base_empty_sb.duplicate()
 	_set_margin(empty_sb, base_margin * 2, base_margin * 1.2, base_margin * 2, base_margin * 1.2)
 	set_stylebox('normal', 'BottomPanelButton', base_empty_wide_sb)
 
