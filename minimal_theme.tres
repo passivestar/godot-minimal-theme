@@ -697,7 +697,9 @@ func _init() -> void:
 	set_constant('relationship_line_width', 'Tree', 0)
 	set_constant('v_separation', 'Tree', int(base_margin * 0.25 * scale))
 
-	set_stylebox('panel', 'Tree', base_empty_margin_sb)
+	sb = base_sb.duplicate()
+	sb.set_content_margin_all(base_margin * 2 * scale)
+	set_stylebox('panel', 'Tree', sb)
 
 	# Leaving focus empty for trees and scroll containers because there's no way to
 	# make focus indication look not janky when only a part of a dock is highlighted
