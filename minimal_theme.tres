@@ -107,10 +107,6 @@ func _init() -> void:
 	base_empty_sb.draw_center = false
 	base_empty_sb.set_content_margin_all(0)
 
-	var base_empty_margin_sb : StyleBoxFlat = base_sb.duplicate()
-	base_empty_margin_sb.draw_center = false
-	base_empty_margin_sb.set_content_margin_all(base_margin * 2 * scale)
-
 	var base_empty_wide_sb : StyleBoxFlat = base_sb.duplicate()
 	base_empty_wide_sb.draw_center = false
 	# Ensure minimum margin for wide flat buttons otherwise the topbar looks broken
@@ -452,7 +448,9 @@ func _init() -> void:
 	set_stylebox('hovered_selected', 'ItemList', flat_button_hover_sb)
 	set_stylebox('hovered_selected_focus', 'ItemList', flat_button_hover_sb)
 
-	set_stylebox('panel', 'ItemList', base_empty_margin_sb)
+	sb = base_sb.duplicate()
+	sb.set_content_margin_all(base_margin * 2 * scale)
+	set_stylebox('panel', 'ItemList', sb)
 
 	# Label
 
