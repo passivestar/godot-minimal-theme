@@ -245,7 +245,7 @@ func _init() -> void:
 	set_color('property_color_x', 'Editor', Color('#E16277') if dark_theme else Color('#670A18'))
 	set_color('property_color_y', 'Editor', Color('#C3EF65') if dark_theme else Color('#455E10'))
 	set_color('property_color_z', 'Editor', Color('#6AABF6') if dark_theme else Color('#143862'))
-	set_color('warning_color', 'Editor', Color(0.95, 0.855, 0.57) if dark_theme else Color(0.82, 0.56, 0.1))
+	set_color('warning_color', 'Editor', Color('#D4C79F') if dark_theme else Color('#D47D03'))
 
 	set_color('prop_subsection', 'Editor', Color.TRANSPARENT)
 	set_constant('top_bar_separation', 'Editor', int(base_margin * scale))
@@ -295,7 +295,7 @@ func _init() -> void:
 	# EditorProperty
 
 	set_color('property_color', 'EditorProperty', mono_color * Color(1, 1, 1, 0.6))
-	set_color('warning_color', 'EditorProperty', Color(0.95, 0.855, 0.57, 1) if dark_theme else Color(0.82, 0.56, 0.1))
+	set_color('warning_color', 'EditorProperty', get_color('warning_color', 'Editor'))
 	set_stylebox('bg', 'EditorProperty', base_empty_sb)
 	set_stylebox('bg_selected', 'EditorProperty', base_empty_sb)
 	sb = base_sb.duplicate()
