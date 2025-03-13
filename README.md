@@ -19,9 +19,9 @@ Here are my personal recommendations:
 
 - Base Color: `#252525` or `#22262B`
 - Accent Color: `#569eff`
-- Contrast: `0.3`
+- Contrast: `0.2-0.3`
 - Icon Saturation: `2`
-- Corner Radius: `5`
+- Corner Radius: `4-5`
 
 `Editor Settings -> Interface -> Editor`:
 
