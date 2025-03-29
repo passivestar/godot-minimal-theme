@@ -790,14 +790,14 @@ func _init() -> void:
 	# needs trees to be transparent, so it needs to have an explicitly set style for the theme
 	# to still be able to support transparent Trees
 	# See https://github.com/godotengine/godot/issues/99118
-	(func():
+	(func() -> void:
 		var tileset_editor : Control = EditorInterface.get_base_control().find_children('', 'TileSetEditor', true, false)[0]
 		var expand_panel : Control = tileset_editor.get_child(3)
-		sb = base_sb.duplicate()
-		sb.set_corner_radius_all(0)
-		expand_panel.add_theme_stylebox_override('panel', sb)
-		tileset_editor.theme_changed.connect(func():
-			expand_panel.add_theme_stylebox_override('panel', sb)
+		var panel_sb : StyleBoxFlat = base_sb.duplicate()
+		panel_sb.set_corner_radius_all(0)
+		expand_panel.add_theme_stylebox_override('panel', panel_sb)
+		var _error : int = tileset_editor.theme_changed.connect(func() -> void:
+			expand_panel.add_theme_stylebox_override('panel', panel_sb)
 		)
 	).call_deferred()
 
