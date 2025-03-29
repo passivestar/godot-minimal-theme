@@ -648,18 +648,17 @@ func _init() -> void:
 
 	var margin : int = 10 if increase_scrollbar_touch_area else 3
 
-	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(0)
-	_set_margin(sb, 0, margin * scale, 0, margin * scale)
+	empty_sb = base_empty_sb.duplicate()
+	_set_margin(empty_sb, 0, margin * scale, 0, margin * scale)
 
-	set_stylebox('scroll', 'HScrollBar', sb)
-	set_stylebox('scroll_focus', 'HScrollBar', sb)
+	set_stylebox('scroll', 'HScrollBar', empty_sb)
+	set_stylebox('scroll_focus', 'HScrollBar', empty_sb)
 
-	sb = sb.duplicate()
-	_set_margin(sb, margin * scale, 0, margin * scale, 0)
+	empty_sb = empty_sb.duplicate()
+	_set_margin(empty_sb, margin * scale, 0, margin * scale, 0)
 
-	set_stylebox('scroll', 'VScrollBar', sb)
-	set_stylebox('scroll_focus', 'VScrollBar', sb)
+	set_stylebox('scroll', 'VScrollBar', empty_sb)
+	set_stylebox('scroll_focus', 'VScrollBar', empty_sb)
 
 	# SplitContainer
 
