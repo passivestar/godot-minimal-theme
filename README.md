@@ -6,8 +6,9 @@
 ## Installation
 
 1. Download the `minimal_theme.tres` file of the [latest version](https://github.com/passivestar/godot-minimal-theme/releases/latest).
-2. Open `Editor Settings -> Interface -> Theme` and choose the downloaded file in the `Custom Theme` field.
-3. Click `Save & Restart`.
+2. Make sure `Advanced Settings` is enabled.
+3. Open `Editor Settings -> Interface -> Theme` and choose the downloaded file in the `Custom Theme` field.
+4. Click `Save & Restart`.
 
 ## Recommended settings
 
