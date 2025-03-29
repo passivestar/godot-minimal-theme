@@ -381,7 +381,6 @@ func _init() -> void:
 	set_stylebox('pressed', 'FlatButton', flat_button_pressed_sb)
 	set_stylebox('pressed_mirrored', 'FlatButton', flat_button_pressed_sb)
 
-
 	# FlatMenuButton
 
 	set_color('font_color', 'FlatMenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
