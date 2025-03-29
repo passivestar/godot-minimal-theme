@@ -733,9 +733,13 @@ func _init() -> void:
 	set_constant('relationship_line_width', 'Tree', 0)
 	set_constant('v_separation', 'Tree', int(base_margin * 0.25 * scale))
 
-	sb = base_sb.duplicate()
-	sb.set_content_margin_all(base_margin * 2 * scale)
-	set_stylebox('panel', 'Tree', sb)
+	# Using empty stylebox for trees to avoid drawing unnecessary borders in docks.
+	# Note that using opaque color that is the same as dock background
+	# doesn't work because EditorPropertyResource is using Tree panel
+	# stylebox to draw its background as well, making it look broken
+	empty_sb = base_empty_sb.duplicate()
+	empty_sb.set_content_margin_all(base_margin * 2 * scale)
+	set_stylebox('panel', 'Tree', empty_sb)
 
 	# Leaving focus empty for trees and scroll containers because there's no way to
 	# make focus indication look not janky when only a part of a dock is highlighted
@@ -776,6 +780,27 @@ func _init() -> void:
 		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'TreeSecondary', sb)
 	set_stylebox('panel', 'ItemListSecondary', sb)
+
+	# HACKS
+	# This section is for workarounds for unthemable UI
+	# These could be fixed on the engine side in the future
+
+	# TilesetEditor
+
+	# Tileset editor is using Tree panel for the panel container of expanded view, while minimal theme
+	# needs trees to be transparent, so it needs to have an explicitly set style for the theme
+	# to still be able to support transparent Trees
+	# See https://github.com/godotengine/godot/issues/99118
+	(func():
+		var tileset_editor : Control = EditorInterface.get_base_control().find_children('', 'TileSetEditor', true, false)[0]
+		var expand_panel : Control = tileset_editor.get_child(3)
+		sb = base_sb.duplicate()
+		sb.set_corner_radius_all(0)
+		expand_panel.add_theme_stylebox_override('panel', sb)
+		tileset_editor.theme_changed.connect(func():
+			expand_panel.add_theme_stylebox_override('panel', sb)
+		)
+	).call_deferred()
 
 # Lighten base color in dark theme, darken in light theme, clamp
 func _get_base_color(brightness_offset: float = 0, saturation_multiplier: float = 1) -> Color:
