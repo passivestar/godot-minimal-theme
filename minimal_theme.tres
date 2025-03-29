@@ -791,6 +791,10 @@ func _init() -> void:
 	# to still be able to support transparent Trees
 	# See https://github.com/godotengine/godot/issues/99118
 	(func() -> void:
+		# Check to see if we're running in project manager
+		if EditorInterface.get_script_editor() == null:
+			return
+
 		var tileset_editor : Control = EditorInterface.get_base_control().find_children('', 'TileSetEditor', true, false)[0]
 		var expand_panel : Control = tileset_editor.get_child(3)
 		var panel_sb : StyleBoxFlat = base_sb.duplicate()
