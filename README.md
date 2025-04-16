@@ -29,7 +29,7 @@ Here are my personal recommendations:
 
 ## Compatibility
 
-This theme was tested with Godot 4.3 and 4.4. Latest Godot version is recommended because Godot always evolves in terms of what can be themed. Some of the PRs were opened by me to help this theme reach its full potential.
+This theme was tested with Godot 4.3, 4.4 and 4.5
 
 ## Credits
 
