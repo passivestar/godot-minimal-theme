@@ -191,6 +191,16 @@ func _init() -> void:
 	_set_margin(sb, base_margin * 2, base_margin * 1.2, base_margin * 2, base_margin * 1.2)
 	set_stylebox('hover_pressed', 'BottomPanelButton', sb)
 
+	# Audio Bus
+
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(0.2, 0.7)
+	set_stylebox('normal', 'EditorAudioBus', sb)
+	set_stylebox('focus', 'EditorAudioBus', sb)
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(0.35, 0.7)
+	set_stylebox('master', 'EditorAudioBus', sb)
+
 	# Button
 
 	set_color('font_color', 'Button', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
