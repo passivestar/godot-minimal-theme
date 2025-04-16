@@ -771,6 +771,11 @@ func _init() -> void:
 	set_stylebox('selected', 'Tree', sb)
 	set_stylebox('selected_focus', 'Tree', sb)
 
+	sb = sb.duplicate()
+	sb.bg_color = _get_base_color(0.5, 0.7)
+	set_stylebox('hovered_selected', 'Tree', sb)
+	set_stylebox('hovered_selected_focus', 'Tree', sb)
+
 	set_stylebox('button_pressed', 'Tree', flat_button_pressed_sb)
 	set_stylebox('custom_button_pressed', 'Tree', flat_button_pressed_sb)
 
