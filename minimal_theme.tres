@@ -445,7 +445,6 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.draw_center = false
-	sb.set_corner_radius_all(0)
 	_set_border(sb, mono_color * Color(1, 1, 1, 0.07), 2, false)
 	set_stylebox('panel_focus', 'GraphEdit', sb)
 
