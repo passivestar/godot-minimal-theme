@@ -350,11 +350,6 @@ func _init() -> void:
 
 	# LaunchPad
 
-	set_color('movie_writer_icon_hover', 'EditorStyles', Color(1, 1, 1, 0.8))
-	set_color('movie_writer_icon_hover_pressed', 'EditorStyles', Color(1, 1, 1, 0.8))
-	set_color('movie_writer_icon_normal', 'EditorStyles', Color(1, 1, 1, 0.7))
-	set_color('movie_writer_icon_pressed', 'EditorStyles', Color(1, 1, 1, 0.941176))
-
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.5)
 	_set_margin(sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
@@ -371,6 +366,23 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(0.5)
 	sb.set_content_margin_all(0)
 	set_stylebox('MovieWriterButtonPressed', 'EditorStyles', sb)
+
+	# Godot 4.5:
+	set_color('icon_normal_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
+	set_color('icon_pressed_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font)
+	set_color('icon_hover_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font)
+	set_color('icon_hover_pressed_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font)
+
+	set_color('icon_normal_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
+	set_color('icon_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
+	set_color('icon_hover_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
+	set_color('icon_hover_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
+
+	# Godot 4.4 and earlier:
+	set_color('movie_writer_icon_hover', 'EditorStyles', Color(1, 1, 1, 0.8))
+	set_color('movie_writer_icon_hover_pressed', 'EditorStyles', Color(1, 1, 1, 0.8))
+	set_color('movie_writer_icon_normal', 'EditorStyles', Color(1, 1, 1, 0.7))
+	set_color('movie_writer_icon_pressed', 'EditorStyles', Color(1, 1, 1, 0.941176))
 
 	# EditorValidationPanel
 
@@ -409,8 +421,13 @@ func _init() -> void:
 	set_color('font_hover_color', 'FlatMenuButton', mono_color_icon_and_font)
 	set_color('font_hover_pressed_color', 'FlatMenuButton', mono_color_icon_and_font)
 	set_color('font_pressed_color', 'FlatMenuButton', mono_color_icon_and_font)
-	set_color('icon_disabled_color', 'FlatMenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.3))
+
 	set_color('icon_normal_color', 'FlatMenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
+	set_color('icon_disabled_color', 'FlatMenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.3))
+	set_color('icon_focus_color', 'FlatMenuButton', mono_color_icon_and_font)
+	set_color('icon_hover_color', 'FlatMenuButton', mono_color_icon_and_font)
+	set_color('icon_hover_pressed_color', 'FlatMenuButton', mono_color_icon_and_font)
+	set_color('icon_pressed_color', 'FlatMenuButton', mono_color_icon_and_font)
 
 	set_stylebox('disabled', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'FlatMenuButton', base_empty_wide_sb)
@@ -535,6 +552,20 @@ func _init() -> void:
 	set_stylebox('pressed_mirrored', 'MainScreenButton', base_empty_wide_sb)
 
 	# MenuButton
+
+	set_color('font_color', 'MenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
+	set_color('font_disabled_color', 'MenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.3))
+	set_color('font_focus_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('font_hover_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('font_hover_pressed_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('font_pressed_color', 'MenuButton', mono_color_icon_and_font)
+
+	set_color('icon_normal_color', 'MenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
+	set_color('icon_disabled_color', 'MenuButton', mono_color_icon_and_font * Color(1, 1, 1, 0.3))
+	set_color('icon_focus_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('icon_hover_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('icon_hover_pressed_color', 'MenuButton', mono_color_icon_and_font)
+	set_color('icon_pressed_color', 'MenuButton', mono_color_icon_and_font)
 
 	set_stylebox('disabled', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'MenuButton', base_empty_wide_sb)
