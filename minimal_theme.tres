@@ -341,6 +341,13 @@ func _init() -> void:
 	_set_margin(sb, base_margin * 2, base_margin * 1.5, base_margin * 2, base_margin * 1.5)
 	set_stylebox('Information3dViewport', 'EditorStyles', sb)
 
+	# Contextual Toolbar
+
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(0.25)
+	sb.set_content_margin_all(0)
+	set_stylebox('ContextualToolbar', 'EditorStyles', sb)
+
 	# LaunchPad
 
 	set_color('movie_writer_icon_hover', 'EditorStyles', Color(1, 1, 1, 0.8))
