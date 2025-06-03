@@ -441,6 +441,21 @@ func _init() -> void:
 	set_stylebox('pressed', 'FlatMenuButton', flat_button_pressed_sb)
 	set_stylebox('pressed_mirrored', 'FlatMenuButton', flat_button_pressed_sb)
 
+	# ColorPicker
+
+	sb = base_sb.duplicate()
+	sb.draw_center = false
+	_set_border(sb, mono_color * Color(1, 1, 1, 0.3), 1, false)
+
+	set_stylebox('sample_focus', 'ColorPicker', sb)
+	set_stylebox('picker_focus_rectangle', 'ColorPicker', sb)
+
+	sb = sb.duplicate()
+	sb.set_corner_radius_all(256 * scale)
+	sb.set_corner_detail(32 * scale)
+
+	set_stylebox('picker_focus_circle', 'ColorPicker', sb)
+
 	# GraphEdit
 
 	sb = base_sb.duplicate()
