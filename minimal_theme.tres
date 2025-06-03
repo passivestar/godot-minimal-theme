@@ -417,6 +417,14 @@ func _init() -> void:
 	set_stylebox('pressed', 'FlatMenuButton', flat_button_pressed_sb)
 	set_stylebox('pressed_mirrored', 'FlatMenuButton', flat_button_pressed_sb)
 
+	# GraphEdit
+
+	sb = base_sb.duplicate()
+	sb.draw_center = false
+	sb.set_corner_radius_all(0)
+	_set_border(sb, mono_color * Color(1, 1, 1, 0.07), 2, false)
+	set_stylebox('panel_focus', 'GraphEdit', sb)
+
 	# GraphStateMachine
 
 	set_color('focus_color', 'GraphStateMachine', Color.TRANSPARENT)
