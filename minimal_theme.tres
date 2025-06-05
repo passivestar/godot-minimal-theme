@@ -34,8 +34,14 @@ func _init() -> void:
 	var relationship_line_opacity : float = settings.get_setting('interface/theme/relationship_line_opacity')
 	@warning_ignore('unsafe_cast')
 	var draw_extra_borders : bool = settings.get_setting('interface/theme/draw_extra_borders')
-	@warning_ignore('unsafe_cast')
-	var increase_scrollbar_touch_area : bool = settings.get_setting('interface/touchscreen/increase_scrollbar_touch_area')	
+
+	var increase_scrollbar_touch_area : bool
+	if Engine.get_version_info().hex >= 0x040500:
+		@warning_ignore('unsafe_cast')
+		increase_scrollbar_touch_area = settings.get_setting('interface/touchscreen/enable_touch_optimizations')	
+	else:
+		@warning_ignore('unsafe_cast')
+		increase_scrollbar_touch_area = settings.get_setting('interface/touchscreen/increase_scrollbar_touch_area')	
 
 	# Globals
 
