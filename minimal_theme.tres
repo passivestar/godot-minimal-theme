@@ -628,6 +628,7 @@ func _init() -> void:
 
 	set_constant('item_start_padding', 'PopupMenu', int(popup_margin * scale))
 	set_constant('v_separation', 'PopupMenu', int(base_margin * 1.75 * scale))
+	set_constant('h_separation', 'PopupMenu', int(base_margin * 1.75 * scale))
 
 	set_stylebox('hover', 'PopupMenu', flat_button_hover_sb)
 
