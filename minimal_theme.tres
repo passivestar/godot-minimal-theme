@@ -792,6 +792,8 @@ func _init() -> void:
 	sb.set_content_margin_all(0)
 	set_stylebox('tabbar_background', 'TabContainer', sb)
 
+	set_constant('tab_separation', 'TabContainer', int(ceilf(scale)))
+
 	# Tree
 
 	set_color('drop_position_color', 'Tree', mono_color * Color(1, 1, 1, 0.4))
