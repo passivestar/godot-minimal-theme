@@ -701,7 +701,7 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.5)
-	sb.set_content_margin_all(base_margin * 1.5 * scale)
+	sb.set_content_margin_all(base_margin * 2 * scale)
 	set_stylebox('normal', 'RichTextLabel', sb)
 
 	# ScrollContainer
