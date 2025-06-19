@@ -880,16 +880,17 @@ func _init() -> void:
 	# This section is for workarounds for unthemable UI
 	# These could be fixed on the engine side in the future
 
-	# TilesetEditor
-
-	# Tileset editor is using Tree panel for the panel container of expanded view, while minimal theme
-	# needs trees to be transparent, so it needs to have an explicitly set style for the theme
-	# to still be able to support transparent Trees
-	# See https://github.com/godotengine/godot/issues/99118
 	(func() -> void:
 		# Check to see if we're running in project manager
 		if EditorInterface.get_script_editor() == null:
 			return
+
+		# TilesetEditor
+
+		# Tileset editor is using Tree panel for the panel container of expanded view, while minimal theme
+		# needs trees to be transparent, so it needs to have an explicitly set style for the theme
+		# to still be able to support transparent Trees
+		# See https://github.com/godotengine/godot/issues/99118
 
 		var tileset_editor : Control = EditorInterface.get_base_control().find_children('', 'TileSetEditor', true, false)[0]
 		var expand_panel : Control = tileset_editor.get_child(3)
@@ -899,6 +900,16 @@ func _init() -> void:
 		var _error : int = tileset_editor.theme_changed.connect(func() -> void:
 			expand_panel.add_theme_stylebox_override('panel', panel_sb)
 		)
+
+		# EditorObjectSelector
+
+		# Godot sometimes relies on unexposed MarginContainers
+
+		var editor_object_selector : Control = EditorInterface.get_base_control().find_children('', 'EditorObjectSelector', true, false)[0]
+		var editor_object_selector_margin_container : Control = editor_object_selector.find_children('', 'MarginContainer', true, false)[0]
+		editor_object_selector_margin_container.add_theme_constant_override('margin_left', base_margin * 2 * scale)
+		editor_object_selector_margin_container.add_theme_constant_override('margin_right', base_margin * 2 * scale)
+
 	).call_deferred()
 
 # Lighten base color in dark theme, darken in light theme, clamp
