@@ -753,13 +753,10 @@ func _init() -> void:
 	# TabContainer
 
 	sb = base_sb.duplicate()
-	_set_margin(sb, base_margin * 3.5, base_margin * 2, base_margin * 3.5, base_margin * 1.5)
+	_set_margin(sb, base_margin * 4, base_margin * 2.3, base_margin * 4, base_margin * 2.3)
 	sb.set_corner_radius_all(0)
-	sb.border_width_top = int(2 * scale)
-	var col : Color = accent_color
-	col.v = 0.5
-	col.s = 0.5
-	sb.border_color = col
+	sb.corner_radius_top_left = int(corner_radius * scale)
+	sb.corner_radius_top_right = int(corner_radius * scale)
 	set_stylebox('tab_selected', 'TabBar', sb)
 	set_stylebox('tab_selected', 'TabContainer', sb)
 
@@ -780,7 +777,7 @@ func _init() -> void:
 	set_stylebox('tab_unselected', 'TabContainer', sb)
 
 	sb = sb.duplicate()
-	sb.bg_color = _get_base_color(-0.5)
+	sb.bg_color = _get_base_color(-0.4)
 	set_stylebox('tab_hovered', 'TabBar', sb)
 	set_stylebox('tab_hovered', 'TabContainer', sb)
 
@@ -791,10 +788,8 @@ func _init() -> void:
 	sb.corner_radius_bottom_left = int(corner_radius * scale)
 	set_stylebox('panel', 'TabContainer', sb)
 
-	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(-1.0)
+	sb = empty_sb.duplicate()
 	sb.set_content_margin_all(0)
-	sb.set_corner_radius_all(0)	
 	set_stylebox('tabbar_background', 'TabContainer', sb)
 
 	# Tree
