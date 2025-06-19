@@ -641,10 +641,10 @@ func _init() -> void:
 	set_stylebox('panel', 'PopupMenu', sb)
 
 	var line_sb : StyleBoxLine = StyleBoxLine.new()
-	line_sb.color = _get_base_color(0.1, 0.8)
+	line_sb.color = _get_base_color(-1.4, 0.6)
 	line_sb.grow_begin = base_margin * -1.5 * scale
 	line_sb.grow_end = base_margin * -1.5 * scale
-	line_sb.thickness = int(ceilf(scale))
+	line_sb.thickness = int(ceilf(scale * 2))
 	set_stylebox('labeled_separator_left', 'PopupMenu', line_sb)
 	set_stylebox('labeled_separator_right', 'PopupMenu', line_sb)
 	set_stylebox('separator', 'PopupMenu', line_sb)
