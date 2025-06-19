@@ -106,7 +106,7 @@ func _init() -> void:
 		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), floorf(scale))
 
 	var flat_button_hover_sb : StyleBoxFlat = base_sb.duplicate()
-	_set_margin(flat_button_hover_sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
+	_set_margin(flat_button_hover_sb, base_margin * 1.8, base_margin * 1.4, base_margin * 1.8, base_margin * 1.4)
 	flat_button_hover_sb.bg_color = _get_base_color(0.3, 0.7)
 	if draw_extra_borders:
 		_set_border(flat_button_hover_sb, extra_border_color_1, floorf(scale))
