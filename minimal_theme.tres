@@ -854,7 +854,7 @@ func _init() -> void:
 	# Separators
 
 	line_sb = StyleBoxLine.new()
-	line_sb.color = _get_base_color(0.2, 0.8)
+	line_sb.color = _get_base_color(-1.2, 0.6)
 	line_sb.grow_begin = base_margin * -1 * scale
 	line_sb.grow_end = base_margin * -1 * scale
 	line_sb.thickness = int(ceilf(scale * 2))
