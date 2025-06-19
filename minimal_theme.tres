@@ -789,7 +789,7 @@ func _init() -> void:
 	set_stylebox('panel', 'TabContainer', sb)
 
 	sb = empty_sb.duplicate()
-	sb.set_content_margin_all(0)
+	_set_margin(sb, 0, 0, base_margin * 2, 0)
 	set_stylebox('tabbar_background', 'TabContainer', sb)
 
 	set_constant('tab_separation', 'TabContainer', int(ceilf(scale)))
