@@ -82,7 +82,7 @@ func _init() -> void:
 	if draw_extra_borders:
 		_set_border(button_sb, extra_border_color_1, floorf(scale))
 	else:
-		_set_border(button_sb, _get_base_color(0.5, 0.7), 1, true)
+		_set_border(button_sb, _get_base_color(0.45, 0.7), 1)
 	_set_margin(button_sb, base_margin * 2, base_margin * 1.5, base_margin * 2, base_margin * 1.5)
 
 	var button_hover_sb : StyleBoxFlat = button_sb.duplicate()
@@ -90,14 +90,14 @@ func _init() -> void:
 	if draw_extra_borders:
 		_set_border(button_hover_sb, extra_border_color_1, floorf(scale))
 	else:
-		_set_border(button_hover_sb, _get_base_color(0.7, 0.7), 1, true)
+		_set_border(button_hover_sb, _get_base_color(0.65, 0.7), 1)
 
 	var button_pressed_sb : StyleBoxFlat = button_sb.duplicate()
 	button_pressed_sb.bg_color = _get_base_color(0.7, 0.7)
 	if draw_extra_borders:
 		_set_border(button_pressed_sb, extra_border_color_1, floorf(scale))
 	else:
-		_set_border(button_pressed_sb, _get_base_color(0.9, 0.7), 1, true)
+		_set_border(button_pressed_sb, _get_base_color(0.85, 0.7), 1)
 
 	var button_disabled_sb : StyleBoxFlat = button_sb.duplicate()
 	button_disabled_sb.set_border_width_all(0)
