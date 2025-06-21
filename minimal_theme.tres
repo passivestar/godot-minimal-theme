@@ -678,6 +678,8 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(-1.4)
 	set_stylebox('panel', 'EditorSettingsDialog', sb)
 	set_stylebox('panel', 'ProjectSettingsEditor', sb)
+	set_stylebox('panel', 'ProjectExportDialog', sb)
+	set_stylebox('panel', 'SceneImportSettingsDialog', sb)
 	set_stylebox('panel', 'EditorAbout', sb)
 
 	# ProgressBar
