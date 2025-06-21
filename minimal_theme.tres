@@ -79,6 +79,9 @@ func _init() -> void:
 	# button of editor settings, and it probably shouldn't even exist
 	var button_sb : StyleBoxFlat = base_sb.duplicate()
 	button_sb.bg_color = _get_base_color(0.3, 0.8)
+	button_sb.shadow_color = Color(0, 0, 0, 0.005) if dark_theme else Color(1, 1, 1, 0.005)
+	button_sb.shadow_size = int(ceilf(8 * scale))
+	button_sb.shadow_offset = Vector2(0, 4) * scale
 	if draw_extra_borders:
 		_set_border(button_sb, extra_border_color_1, floorf(scale))
 	else:
