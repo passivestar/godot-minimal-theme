@@ -688,7 +688,7 @@ func _init() -> void:
 	# ProgressBar
 
 	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(-1.2, 0.9)
+	sb.bg_color = _get_base_color(-1.3, 0.9)
 	sb.expand_margin_top = base_margin * 0.5 * scale
 	sb.expand_margin_bottom = base_margin * 0.5 * scale
 	sb.set_content_margin_all(base_margin * scale)
