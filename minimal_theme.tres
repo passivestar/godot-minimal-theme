@@ -884,6 +884,10 @@ func _init() -> void:
 		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('panel', 'TreeSecondary', sb)
 	set_stylebox('panel', 'ItemListSecondary', sb)
+	# Use sidebar stylebox for EditorDebuggerInspector in StackTrace
+	# to keep the default 3-column layout, as debugger inspector is
+	# too small to be considered a main area
+	set_stylebox('panel', 'EditorDebuggerInspector', sb)
 
 	# HACKS
 	# This section is for workarounds for unthemable UI
