@@ -720,7 +720,7 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.5, 0.6)
-	_set_border(sb, _get_base_color(), floorf(scale))
+	_set_border(sb, _get_base_color() * Color(1, 1, 1, 0), floorf(scale))
 
 	set_stylebox('grabber', 'HScrollBar', sb)
 	set_stylebox('grabber', 'VScrollBar', sb)
