@@ -828,10 +828,14 @@ func _init() -> void:
 	# make focus indication look not janky when only a part of a dock is highlighted
 	set_stylebox('focus', 'Tree', base_empty_sb)
 
-	# Rounded corners look a little janky in tree titles because there's no way to
-	# introduce gaps between columns, however not having rounded corners looks even worse
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-1.2 if dark_theme else -1.8)
+
+	# Using a transparent border to separate rounded column titles
+	sb.border_width_left = int(ceilf(scale))
+	sb.border_width_right = int(ceilf(scale))
+	sb.border_color = sb.bg_color * Color(1, 1, 1, 0)
+
 	set_stylebox('title_button_hover', 'Tree', sb)
 	set_stylebox('title_button_normal', 'Tree', sb)
 	set_stylebox('title_button_pressed', 'Tree', sb)
