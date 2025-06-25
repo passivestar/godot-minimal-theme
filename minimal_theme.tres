@@ -469,8 +469,8 @@ func _init() -> void:
 	set_stylebox('picker_focus_rectangle', 'ColorPicker', sb)
 
 	sb = sb.duplicate()
-	sb.set_corner_radius_all(256 * scale)
-	sb.set_corner_detail(32 * scale)
+	sb.set_corner_radius_all(int(256 * scale))
+	sb.set_corner_detail(int(32 * scale))
 
 	set_stylebox('picker_focus_circle', 'ColorPicker', sb)
 
@@ -930,8 +930,8 @@ func _init() -> void:
 
 		var editor_object_selector : Control = EditorInterface.get_base_control().find_children('', 'EditorObjectSelector', true, false)[0]
 		var editor_object_selector_margin_container : Control = editor_object_selector.find_children('', 'MarginContainer', true, false)[0]
-		editor_object_selector_margin_container.add_theme_constant_override('margin_left', base_margin * 2 * scale)
-		editor_object_selector_margin_container.add_theme_constant_override('margin_right', base_margin * 2 * scale)
+		editor_object_selector_margin_container.add_theme_constant_override('margin_left', int(base_margin * 2 * scale))
+		editor_object_selector_margin_container.add_theme_constant_override('margin_right', int(base_margin * 2 * scale))
 
 		# CanvasItemEditor, Node3DEditor, GameView
 
@@ -939,18 +939,18 @@ func _init() -> void:
 
 		var canvas_item_editor : Control = EditorInterface.get_base_control().find_children('', 'CanvasItemEditor', true, false)[0]
 		var canvas_item_editor_toolbar_margin_container : Control = canvas_item_editor.find_children('', 'MarginContainer', true, false)[0]
-		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_top', base_margin * 0.5 * scale)
-		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', base_margin * 0.5 * scale)
+		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_top', int(base_margin * 0.5 * scale))
+		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', int(base_margin * 0.5 * scale))
 
 		var node_3d_editor : Control = EditorInterface.get_base_control().find_children('', 'Node3DEditor', true, false)[0]
 		var node_3d_editor_toolbar_margin_container : Control = node_3d_editor.find_children('', 'MarginContainer', true, false)[0]
-		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_top', base_margin * 0.5 * scale)
-		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', base_margin * 0.5 * scale)
+		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_top', int(base_margin * 0.5 * scale))
+		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', int(base_margin * 0.5 * scale))
 
 		var game_view : Control = EditorInterface.get_base_control().find_children('', 'GameView', true, false)[0]
 		var game_view_toolbar_margin_container : Control = game_view.find_children('', 'MarginContainer', true, false)[0]
-		game_view_toolbar_margin_container.add_theme_constant_override('margin_top', base_margin * 0.5 * scale)
-		game_view_toolbar_margin_container.add_theme_constant_override('margin_bottom', base_margin * 0.5 * scale)
+		game_view_toolbar_margin_container.add_theme_constant_override('margin_top', int(base_margin * 0.5 * scale))
+		game_view_toolbar_margin_container.add_theme_constant_override('margin_bottom', int(base_margin * 0.5 * scale))
 	).call_deferred()
 
 # Lighten base color in dark theme, darken in light theme, clamp
