@@ -328,7 +328,8 @@ func _init() -> void:
 	# any value to the regular inspector, however connection
 	# bindings editor relies on it for property removal
 	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(0.15, 0.8)
+	# Transparent background to make sure it blends with subresource editors
+	sb.bg_color = mono_color * Color(1, 1, 1, 0.03)
 	set_stylebox('bg_selected', 'EditorProperty', sb)
 
 	sb = base_sb.duplicate()
