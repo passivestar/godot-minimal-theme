@@ -301,7 +301,7 @@ func _init() -> void:
 	empty_sb = base_empty_sb.duplicate()
 	empty_sb.set_content_margin_all(base_margin * 2 * scale)
 	set_stylebox('panel', 'EditorInspector', empty_sb)
-	set_constant('v_separation', 'EditorInspector', int(base_margin * 0.85 * scale))
+	set_constant('v_separation', 'EditorInspector', int(base_margin * 0.5 * scale))
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.2, 0.8)
 	_set_margin(sb, 0, base_margin * 1.2, 0, base_margin * 1.2)
