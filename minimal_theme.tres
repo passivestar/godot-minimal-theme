@@ -109,7 +109,8 @@ func _init() -> void:
 		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), floorf(scale))
 
 	var flat_button_hover_sb : StyleBoxFlat = base_sb.duplicate()
-	_set_margin(flat_button_hover_sb, base_margin * 1.8, base_margin * 1.4, base_margin * 1.8, base_margin * 1.4)
+	# This affects buttons in Tree so top and bottom margins should be kept low
+	_set_margin(flat_button_hover_sb, base_margin * 1.5, base_margin * 0.9, base_margin * 1.5, base_margin * 0.9)
 	flat_button_hover_sb.bg_color = _get_base_color(0.3, 0.7)
 	if draw_extra_borders:
 		_set_border(flat_button_hover_sb, extra_border_color_1, floorf(scale))
@@ -916,6 +917,20 @@ func _init() -> void:
 		var editor_object_selector_margin_container : Control = editor_object_selector.find_children('', 'MarginContainer', true, false)[0]
 		editor_object_selector_margin_container.add_theme_constant_override('margin_left', base_margin * 2 * scale)
 		editor_object_selector_margin_container.add_theme_constant_override('margin_right', base_margin * 2 * scale)
+
+		# CanvasItemEditor and Node3DEditor
+
+		# Increase toolbar margins
+		var canvas_item_editor : Control = EditorInterface.get_base_control().find_children('', 'CanvasItemEditor', true, false)[0]
+		var canvas_item_editor_toolbar_margin_container : Control = canvas_item_editor.find_children('', 'MarginContainer', true, false)[0]
+		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_top', base_margin * 0.5 * scale)
+		canvas_item_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', base_margin * 0.5 * scale)
+
+		var node_3d_editor : Control = EditorInterface.get_base_control().find_children('', 'Node3DEditor', true, false)[0]
+		var node_3d_editor_toolbar_margin_container : Control = node_3d_editor.find_children('', 'MarginContainer', true, false)[0]
+		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_top', base_margin * 0.5 * scale)
+		node_3d_editor_toolbar_margin_container.add_theme_constant_override('margin_bottom', base_margin * 0.5 * scale)
+
 
 	).call_deferred()
 
