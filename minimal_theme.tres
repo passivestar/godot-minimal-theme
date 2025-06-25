@@ -757,13 +757,8 @@ func _init() -> void:
 
 	# SplitContainer
 
-	set_constant('minimum_grab_thickness', 'SplitContainer', int(base_margin * 1.5 * scale))
+	set_constant('minimum_grab_thickness', 'SplitContainer', int(base_margin * 2.0 * scale))
 	set_constant('separation', 'SplitContainer', int(base_margin * 0.75 * scale))
-
-	var empty_texture : PlaceholderTexture2D = PlaceholderTexture2D.new()
-	empty_texture.size = Vector2(0, 0)
-	set_icon('h_grabber', 'SplitContainer', empty_texture)
-	set_icon('v_grabber', 'SplitContainer', empty_texture)
 
 	# TabContainer
 
