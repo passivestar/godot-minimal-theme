@@ -323,7 +323,14 @@ func _init() -> void:
 	set_color('property_color', 'EditorProperty', mono_color_icon_and_font * Color(1, 1, 1, 0.6))
 	set_color('warning_color', 'EditorProperty', get_color('warning_color', 'Editor'))
 	set_stylebox('bg', 'EditorProperty', base_empty_sb)
-	set_stylebox('bg_selected', 'EditorProperty', base_empty_sb)
+
+	# Having visible indication of selected property doesn't bring
+	# any value to the regular inspector, however connection
+	# bindings editor relies on it for property removal
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(0.15, 0.8)
+	set_stylebox('bg_selected', 'EditorProperty', sb)
+
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8) # Same as LineEdit normal
 	sb.set_content_margin_all(base_margin * scale)
