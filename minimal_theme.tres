@@ -926,7 +926,7 @@ func _init() -> void:
 		var editor_object_selector : Control = EditorInterface.get_base_control().find_children('', 'EditorObjectSelector', true, false)[0]
 		var editor_object_selector_margin_container : Control = editor_object_selector.find_children('', 'MarginContainer', true, false)[0]
 		editor_object_selector_margin_container.add_theme_constant_override('margin_left', int(base_margin * 2 * scale))
-		editor_object_selector_margin_container.add_theme_constant_override('margin_right', int(base_margin * 2 * scale))
+		editor_object_selector_margin_container.add_theme_constant_override('margin_right', int(base_margin * 2.5 * scale))
 
 		# CanvasItemEditor, Node3DEditor, GameView
 
