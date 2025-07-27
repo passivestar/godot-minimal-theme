@@ -815,7 +815,9 @@ func _init() -> void:
 	set_constant('inner_item_margin_right', 'Tree', int(base_margin * scale))
 	set_constant('parent_hl_line_width', 'Tree', int(ceilf(scale)))
 	set_constant('relationship_line_width', 'Tree', 0)
-	set_constant('v_separation', 'Tree', int(base_margin * 0.25 * scale))
+
+	var tree_v_separation : int = int(pow(base_margin * 0.2 * scale, 3))
+	set_constant('v_separation', 'Tree', tree_v_separation)
 
 	# Using empty stylebox for trees to avoid drawing unnecessary borders in docks.
 	# Note that using opaque color that is the same as dock background
