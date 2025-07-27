@@ -335,8 +335,6 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.8) # Same as LineEdit normal
 	sb.set_content_margin_all(base_margin * scale)
-	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
 	set_stylebox('child_bg', 'EditorProperty', sb)
 
 	# EditorSpinSlider
