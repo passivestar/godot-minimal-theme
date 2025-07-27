@@ -692,6 +692,7 @@ func _init() -> void:
 	set_stylebox('panel', 'ProjectExportDialog', sb)
 	set_stylebox('panel', 'SceneImportSettingsDialog', sb)
 	set_stylebox('panel', 'EditorAbout', sb)
+	set_stylebox('panel', 'ThemeItemEditorDialog', sb)
 
 	# ProgressBar
 
