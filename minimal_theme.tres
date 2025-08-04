@@ -844,6 +844,7 @@ func _init() -> void:
 
 	sb = flat_button_hover_sb.duplicate()
 	sb.set_content_margin_all(0)
+	sb.bg_color = _get_base_color(0.2, 0.7)
 	set_stylebox('button_hover', 'Tree', sb)
 	set_stylebox('hover', 'Tree', sb)
 	set_stylebox('hovered_dimmed', 'Tree', sb)
@@ -853,7 +854,7 @@ func _init() -> void:
 	set_stylebox('selected_focus', 'Tree', sb)
 
 	sb = sb.duplicate()
-	sb.bg_color = _get_base_color(0.5, 0.7)
+	sb.bg_color = _get_base_color(0.3, 0.7)
 	set_stylebox('hovered_selected', 'Tree', sb)
 	set_stylebox('hovered_selected_focus', 'Tree', sb)
 
@@ -895,12 +896,38 @@ func _init() -> void:
 	# too small to be considered a main area
 	set_stylebox('panel', 'EditorDebuggerInspector', sb)
 
+	# ProjectManager
+
+	sb = base_sb.duplicate()
+	sb.bg_color = _get_base_color(-0.7 if dark_theme else -0.9)
+	set_stylebox('project_list', 'ProjectManager', sb)
+
 	# HACKS
 	# This section is for workarounds for unthemable UI
 	# These could be fixed on the engine side in the future
 
 	(func() -> void:
-		# Check to see if we're running in project manager
+
+		# Project Manager fixes
+		if EditorInterface.get_script_editor() == null:
+
+			# QuickSettingsDialog
+
+			# QuickSettingsDialog is using EditorStyles Background stylebox
+			# by default which is way too dark for this theme
+
+			var root : Window = Engine.get_main_loop().root
+			var quick_settings_dialog : AcceptDialog = root.find_children('', 'QuickSettingsDialog', true, false)[0]
+			var quick_settings_dialog_list_panel : PanelContainer = quick_settings_dialog.find_children('', 'PanelContainer', true, false)[0]
+			var panel_sb : StyleBoxFlat = base_sb.duplicate()
+			panel_sb.bg_color = _get_base_color(-0.7 if dark_theme else -0.9)
+			quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb)
+			var _error : int = quick_settings_dialog.theme_changed.connect(func() -> void:
+				# Reapply the stylebox override on theme change
+				quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb)
+			)
+
+		# All fixes below are for the main editor window
 		if EditorInterface.get_script_editor() == null:
 			return
 
