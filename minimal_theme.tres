@@ -927,8 +927,7 @@ func _init() -> void:
 				quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb)
 			)
 
-		# All fixes below are for the main editor window
-		if EditorInterface.get_script_editor() == null:
+			# All fixes below are for the main editor window
 			return
 
 		# TilesetEditor
