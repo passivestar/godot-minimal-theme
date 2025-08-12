@@ -611,7 +611,7 @@ func _init() -> void:
 
 	# OptionButton
 
-	set_constant('arrow_margin', 'OptionButton', int(base_margin * 3.5))
+	set_constant('arrow_margin', 'OptionButton', int(base_margin * 2 * scale))
 
 	set_color('font_color', 'OptionButton', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
 	set_color('font_disabled_color', 'OptionButton', mono_color_icon_and_font * Color(1, 1, 1, 0.3))
