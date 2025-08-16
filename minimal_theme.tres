@@ -58,6 +58,7 @@ func _init() -> void:
 		dark_theme_icon_and_font = icon_and_font_color == 2 # ColorMode.LIGHT
 
 	var mono_color : Color = Color.WHITE if dark_theme else Color.BLACK
+	var mono_color_inv : Color = Color.BLACK if dark_theme else Color.WHITE
 	var mono_color_icon_and_font : Color = Color.WHITE if dark_theme_icon_and_font else Color.BLACK
 
 	var extra_border_color_1 : Color = Color(1, 1, 1, 0.4) if dark_theme else Color(0, 0, 0, 0.4)
@@ -886,6 +887,16 @@ func _init() -> void:
 	line_sb = line_sb.duplicate()
 	line_sb.vertical = true
 	set_stylebox('separator', 'VSeparator', line_sb)
+
+	# Sliders
+
+	sb = base_sb.duplicate()
+	sb.bg_color = mono_color_inv * Color(1, 1, 1, 0.35)
+	_set_margin(sb, 0, 2, 0, 2)
+	set_stylebox('slider', 'HSlider', sb)
+	sb = sb.duplicate()
+	_set_margin(sb, 2, 0, 2, 0)
+	set_stylebox('slider', 'VSlider', sb)
 
 	# Sidebars
 
