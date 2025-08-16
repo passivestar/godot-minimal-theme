@@ -83,7 +83,7 @@ func _init() -> void:
 	button_sb.shadow_size = int(ceilf(8 * scale))
 	button_sb.shadow_offset = Vector2(0, 4) * scale
 	if draw_extra_borders:
-		_set_border(button_sb, extra_border_color_1, floorf(scale))
+		_set_border(button_sb, extra_border_color_1, 1)
 	else:
 		_set_border(button_sb, _get_base_color(0.425, 0.7), 1)
 	_set_margin(button_sb, base_margin * 2, base_margin * 1.5, base_margin * 2, base_margin * 1.5)
@@ -91,14 +91,14 @@ func _init() -> void:
 	var button_hover_sb : StyleBoxFlat = button_sb.duplicate()
 	button_hover_sb.bg_color = _get_base_color(0.5, 0.7)
 	if draw_extra_borders:
-		_set_border(button_hover_sb, extra_border_color_1, floorf(scale))
+		_set_border(button_hover_sb, extra_border_color_1, 1)
 	else:
 		_set_border(button_hover_sb, _get_base_color(0.625, 0.7), 1)
 
 	var button_pressed_sb : StyleBoxFlat = button_sb.duplicate()
 	button_pressed_sb.bg_color = _get_base_color(0.7, 0.7)
 	if draw_extra_borders:
-		_set_border(button_pressed_sb, extra_border_color_1, floorf(scale))
+		_set_border(button_pressed_sb, extra_border_color_1, 1)
 	else:
 		_set_border(button_pressed_sb, _get_base_color(0.825, 0.7), 1)
 
@@ -106,14 +106,14 @@ func _init() -> void:
 	button_disabled_sb.set_border_width_all(0)
 	button_disabled_sb.bg_color = _get_base_color(0.2, 0.7)
 	if draw_extra_borders:
-		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), floorf(scale))
+		_set_border(button_disabled_sb, extra_border_color_2 * Color(1, 1, 1, 0.5), 1)
 
 	var flat_button_hover_sb : StyleBoxFlat = base_sb.duplicate()
 	# This affects buttons in Tree so top and bottom margins should be kept low
 	_set_margin(flat_button_hover_sb, base_margin * 1.5, base_margin * 0.9, base_margin * 1.5, base_margin * 0.9)
 	flat_button_hover_sb.bg_color = _get_base_color(0.3, 0.7)
 	if draw_extra_borders:
-		_set_border(flat_button_hover_sb, extra_border_color_1, floorf(scale))
+		_set_border(flat_button_hover_sb, extra_border_color_1, 1)
 
 	var flat_button_pressed_sb : StyleBoxFlat = flat_button_hover_sb.duplicate()
 	flat_button_pressed_sb.bg_color = _get_base_color(0.5, 0.7)
@@ -154,7 +154,7 @@ func _init() -> void:
 	var sb : StyleBoxFlat = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.55, 0.7)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floorf(scale))
+		_set_border(sb, extra_border_color_1, 1)
 	set_stylebox('time_available', 'AnimationTimelineEdit', sb)
 
 	sb = base_sb.duplicate()
@@ -286,7 +286,7 @@ func _init() -> void:
 	sb.corner_radius_bottom_right = int(corner_radius * scale)
 	sb.corner_radius_bottom_left = int(corner_radius * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('normal', 'EditorHelpBitContent', sb)
 
 	sb = base_sb.duplicate()
@@ -296,7 +296,7 @@ func _init() -> void:
 	sb.corner_radius_top_right = int(corner_radius * scale)
 	sb.corner_radius_top_left = int(corner_radius * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('normal', 'EditorHelpBitTitle', sb)
 
 	# EditorInspector
@@ -309,7 +309,7 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(0.2, 0.8)
 	_set_margin(sb, 0, base_margin * 1.2, 0, base_margin * 1.2)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('bg', 'EditorInspectorCategory', sb)
 	set_constant('h_separation', 'EditorInspectorSection', int(base_margin * scale))
 
@@ -464,7 +464,7 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.draw_center = false
-	_set_border(sb, mono_color * Color(1, 1, 1, 0.3), 1, false)
+	_set_border(sb, mono_color * Color(1, 1, 1, 0.3), 1)
 
 	set_stylebox('sample_focus', 'ColorPicker', sb)
 	set_stylebox('picker_focus_rectangle', 'ColorPicker', sb)
@@ -479,7 +479,7 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.draw_center = false
-	_set_border(sb, mono_color * Color(1, 1, 1, 0.07), 2, false)
+	_set_border(sb, mono_color * Color(1, 1, 1, 0.07), 2)
 	set_stylebox('panel_focus', 'GraphEdit', sb)
 
 	# GraphStateMachine
@@ -550,7 +550,7 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-1.3 if dark_theme else -2.2)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floorf(scale))
+		_set_border(sb, extra_border_color_1, 1)
 	_set_margin(sb, base_margin * 2, base_margin * 0.75, base_margin * 2, base_margin * 0.75)
 	set_stylebox('focus', 'LineEdit', sb)
 	set_stylebox('focus', 'TextEdit', sb)
@@ -650,7 +650,7 @@ func _init() -> void:
 	sb.set_content_margin_all(int(popup_margin * scale))
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('panel', 'PopupMenu', sb)
 
 	var line_sb : StyleBoxLine = StyleBoxLine.new()
@@ -671,7 +671,7 @@ func _init() -> void:
 	sb.set_content_margin_all(int(popup_margin * scale))
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('panel', 'PopupPanel', sb)
 
 	sb = base_sb.duplicate()
@@ -679,7 +679,7 @@ func _init() -> void:
 	sb.set_content_margin_all(0)
 	sb.set_corner_radius_all(0)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('panel', 'TooltipPanel', sb)
 
 	sb = base_sb.duplicate()
@@ -705,13 +705,13 @@ func _init() -> void:
 	sb.expand_margin_bottom = base_margin * 0.5 * scale
 	sb.set_content_margin_all(base_margin * scale)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('background', 'ProgressBar', sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = _get_base_color(0.4, 0.8)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_1, floorf(scale))
+		_set_border(sb, extra_border_color_1, 1)
 	set_stylebox('fill', 'ProgressBar', sb)
 
 	# RichTextLabel
@@ -892,7 +892,7 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-0.55 if dark_theme else -0.9)
 	if draw_extra_borders:
-		_set_border(sb, extra_border_color_2, floorf(scale))
+		_set_border(sb, extra_border_color_2, 1)
 	set_stylebox('panel', 'TreeSecondary', sb)
 	set_stylebox('panel', 'ItemListSecondary', sb)
 	# Use sidebar stylebox for EditorDebuggerInspector in StackTrace
