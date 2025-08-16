@@ -826,7 +826,7 @@ func _init() -> void:
 	# doesn't work because EditorPropertyResource is using Tree panel
 	# stylebox to draw its background as well, making it look broken
 	empty_sb = base_empty_sb.duplicate()
-	empty_sb.set_content_margin_all(base_margin * 2 * scale)
+	_set_margin(empty_sb, base_margin * 1.5, base_margin * 2.5, base_margin * 1.5, base_margin * 2.5)
 	set_stylebox('panel', 'Tree', empty_sb)
 
 	# Leaving focus empty for trees and scroll containers because there's no way to
