@@ -730,29 +730,30 @@ func _init() -> void:
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.5, 0.6)
-	_set_border(sb, _get_base_color() * Color(1, 1, 1, 0), floorf(scale))
+	_set_border(sb, _get_base_color() * Color(1, 1, 1, 0), 3)
 
 	set_stylebox('grabber', 'HScrollBar', sb)
 	set_stylebox('grabber', 'VScrollBar', sb)
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(1.4, 0.5)
+	_set_border(sb, _get_base_color() * Color(1, 1, 1, 0), 2.5)
 
 	set_stylebox('grabber_highlight', 'HScrollBar', sb)
 	set_stylebox('grabber_highlight', 'VScrollBar', sb)
 	set_stylebox('grabber_pressed', 'HScrollBar', sb)
 	set_stylebox('grabber_pressed', 'VScrollBar', sb)
 
-	var margin : int = 10 if increase_scrollbar_touch_area else 3
+	var margin : int = 12 if increase_scrollbar_touch_area else 6
 
 	empty_sb = base_empty_sb.duplicate()
-	_set_margin(empty_sb, 0, margin * scale, 0, margin * scale)
+	_set_margin(empty_sb, 0, margin, 0, margin)
 
 	set_stylebox('scroll', 'HScrollBar', empty_sb)
 	set_stylebox('scroll_focus', 'HScrollBar', empty_sb)
 
 	empty_sb = empty_sb.duplicate()
-	_set_margin(empty_sb, margin * scale, 0, margin * scale, 0)
+	_set_margin(empty_sb, margin, 0, margin, 0)
 
 	set_stylebox('scroll', 'VScrollBar', empty_sb)
 	set_stylebox('scroll_focus', 'VScrollBar', empty_sb)
