@@ -118,6 +118,9 @@ func _init() -> void:
 	var flat_button_pressed_sb : StyleBoxFlat = flat_button_hover_sb.duplicate()
 	flat_button_pressed_sb.bg_color = _get_base_color(0.5, 0.7)
 
+	var flat_button_normal_sb : StyleBoxFlat = flat_button_hover_sb.duplicate()
+	flat_button_normal_sb.draw_center = false
+
 	var base_empty_sb : StyleBoxFlat = base_sb.duplicate()
 	base_empty_sb.draw_center = false
 	base_empty_sb.set_content_margin_all(0)
@@ -565,7 +568,7 @@ func _init() -> void:
 
 	# MainMenuBar
 
-	set_stylebox('normal', 'MainMenuBar', base_empty_wide_sb)
+	set_stylebox('normal', 'MainMenuBar', flat_button_normal_sb)
 	set_stylebox('hover', 'MainMenuBar', flat_button_hover_sb)
 	set_stylebox('hover_pressed', 'MainMenuBar', flat_button_pressed_sb)
 	set_stylebox('pressed', 'MainMenuBar', flat_button_pressed_sb)
