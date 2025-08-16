@@ -919,15 +919,16 @@ func _init() -> void:
 			# QuickSettingsDialog is using EditorStyles Background stylebox
 			# by default which is way too dark for this theme
 
-			var root : Window = Engine.get_main_loop().root
+			var scene_tree : SceneTree = Engine.get_main_loop()
+			var root : Window = scene_tree.root
 			var quick_settings_dialog : AcceptDialog = root.find_children('', 'QuickSettingsDialog', true, false)[0]
 			var quick_settings_dialog_list_panel : PanelContainer = quick_settings_dialog.find_children('', 'PanelContainer', true, false)[0]
-			var panel_sb : StyleBoxFlat = base_sb.duplicate()
-			panel_sb.bg_color = _get_base_color(-0.7 if dark_theme else -0.9)
-			quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb)
-			var _error : int = quick_settings_dialog.theme_changed.connect(func() -> void:
+			var panel_sb_quick_settings : StyleBoxFlat = base_sb.duplicate()
+			panel_sb_quick_settings.bg_color = _get_base_color(-0.7 if dark_theme else -0.9)
+			quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb_quick_settings)
+			var _error_quick_settings : int = quick_settings_dialog.theme_changed.connect(func() -> void:
 				# Reapply the stylebox override on theme change
-				quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb)
+				quick_settings_dialog_list_panel.add_theme_stylebox_override('panel', panel_sb_quick_settings)
 			)
 
 			# All fixes below are for the main editor window
@@ -942,11 +943,11 @@ func _init() -> void:
 
 		var tileset_editor : Control = EditorInterface.get_base_control().find_children('', 'TileSetEditor', true, false)[0]
 		var expand_panel : Control = tileset_editor.get_child(3)
-		var panel_sb : StyleBoxFlat = base_sb.duplicate()
-		panel_sb.set_corner_radius_all(0)
-		expand_panel.add_theme_stylebox_override('panel', panel_sb)
-		var _error : int = tileset_editor.theme_changed.connect(func() -> void:
-			expand_panel.add_theme_stylebox_override('panel', panel_sb)
+		var panel_sb_expand_panel : StyleBoxFlat = base_sb.duplicate()
+		panel_sb_expand_panel.set_corner_radius_all(0)
+		expand_panel.add_theme_stylebox_override('panel', panel_sb_expand_panel)
+		var _error_tileset_editor : int = tileset_editor.theme_changed.connect(func() -> void:
+			expand_panel.add_theme_stylebox_override('panel', panel_sb_expand_panel)
 		)
 
 		# EditorObjectSelector
