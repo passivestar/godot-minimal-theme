@@ -563,7 +563,7 @@ func _init() -> void:
 
 	# Using transparent background for readonly otherwise it looks bad in the master audio bus
 	sb = sb.duplicate()
-	sb.bg_color = Color(0, 0, 0, 0.1) if dark_theme else Color(1, 1, 1, 0.1)
+	sb.bg_color = Color(0, 0, 0, 0.2) if dark_theme else Color(1, 1, 1, 0.5)
 	set_stylebox('read_only', 'LineEdit', sb)
 	set_stylebox('read_only', 'TextEdit', sb)
 
