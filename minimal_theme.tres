@@ -60,6 +60,7 @@ func _init() -> void:
 	var mono_color : Color = Color.WHITE if dark_theme else Color.BLACK
 	var mono_color_inv : Color = Color.BLACK if dark_theme else Color.WHITE
 	var mono_color_icon_and_font : Color = Color.WHITE if dark_theme_icon_and_font else Color.BLACK
+	var mono_color_icon_and_font_inv : Color = Color.BLACK if dark_theme_icon_and_font else Color.WHITE
 
 	var extra_border_color_1 : Color = Color(1, 1, 1, 0.4) if dark_theme else Color(0, 0, 0, 0.4)
 	var extra_border_color_2 : Color = Color(1, 1, 1, 0.2) if dark_theme else Color(0, 0, 0, 0.2)
@@ -371,10 +372,8 @@ func _init() -> void:
 	# LaunchPad
 
 	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(-0.5)
-	_set_margin(sb, base_margin * 1.5, base_margin, base_margin * 1.5, base_margin)
-	sb.set_expand_margin_all(scale)
-	sb.set_border_width_all(0)
+	sb.bg_color = accent_color * Color(1, 1, 1, 0.2)
+	_set_border(sb, accent_color * Color(1, 1, 1, 0.8), 2)
 	set_stylebox('LaunchPadMovieMode', 'EditorStyles', sb)
 
 	sb = sb.duplicate()
@@ -383,9 +382,14 @@ func _init() -> void:
 	set_stylebox('LaunchPadNormal', 'EditorStyles', sb)
 
 	sb = base_sb.duplicate()
-	sb.bg_color = _get_base_color(0.5)
+	sb.bg_color = accent_color * Color(1, 1, 1, 0.8)
 	sb.set_content_margin_all(0)
 	set_stylebox('MovieWriterButtonPressed', 'EditorStyles', sb)
+
+	sb = base_sb.duplicate()
+	sb.bg_color = mono_color * Color(1, 1, 1, 0.1)
+	sb.set_content_margin_all(0)
+	set_stylebox('hover', 'RunBarButton', sb)
 
 	# Godot 4.5:
 	set_color('icon_normal_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
@@ -393,10 +397,10 @@ func _init() -> void:
 	set_color('icon_hover_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font)
 	set_color('icon_hover_pressed_color', 'RunBarButtonMovieMakerDisabled', mono_color_icon_and_font)
 
-	set_color('icon_normal_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font * Color(1, 1, 1, 0.7))
-	set_color('icon_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
-	set_color('icon_hover_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
-	set_color('icon_hover_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font)
+	set_color('icon_normal_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font_inv * Color(1, 1, 1, 0.5))
+	set_color('icon_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font_inv)
+	set_color('icon_hover_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font_inv)
+	set_color('icon_hover_pressed_color', 'RunBarButtonMovieMakerEnabled', mono_color_icon_and_font_inv)
 
 	# Godot 4.4 and earlier:
 	set_color('movie_writer_icon_hover', 'EditorStyles', Color(1, 1, 1, 0.8))
