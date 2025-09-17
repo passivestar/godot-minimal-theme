@@ -76,6 +76,11 @@ func _init() -> void:
 	base_sb.set_content_margin_all(base_margin * scale)
 	base_sb.set_corner_radius_all(int(corner_radius * scale))
 
+	# Focus
+	var focus_sb : StyleBoxFlat = base_sb.duplicate()
+	focus_sb.draw_center = false
+	_set_border(focus_sb, accent_color * Color(1, 1, 1, 0.8), 2)
+
 	# Non-transparent buttons will potentially blend worse with background
 	# than transparent ones, however this is currently only noticeable on the Close
 	# button of editor settings, and it probably shouldn't even exist
@@ -135,7 +140,7 @@ func _init() -> void:
 
 	# Animation editor
 
-	set_color('focus_color', 'AnimationBezierTrackEdit', Color.TRANSPARENT)
+	set_color('focus_color', 'AnimationBezierTrackEdit', accent_color * Color(1, 1, 1, 0.8))
 	set_color('h_line_color', 'AnimationBezierTrackEdit', mono_color * Color(1, 1, 1, 0.12))
 	set_color('track_focus_color', 'AnimationBezierTrackEdit', mono_color * Color(1, 1, 1, 0.1))
 	set_color('v_line_color', 'AnimationBezierTrackEdit', Color.TRANSPARENT)
@@ -211,7 +216,7 @@ func _init() -> void:
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.2, 0.7)
 	set_stylebox('normal', 'EditorAudioBus', sb)
-	set_stylebox('focus', 'EditorAudioBus', sb)
+	set_stylebox('focus', 'EditorAudioBus', focus_sb)
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(0.35, 0.7)
 	set_stylebox('master', 'EditorAudioBus', sb)
@@ -229,7 +234,7 @@ func _init() -> void:
 	set_constant('outline_size', 'Button', 0)
 	set_stylebox('disabled', 'Button', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'Button', button_disabled_sb)
-	set_stylebox('focus', 'Button', base_empty_sb)
+	set_stylebox('focus', 'Button', focus_sb)
 	set_stylebox('hover', 'Button', button_hover_sb)
 	set_stylebox('hover_mirrored', 'Button', button_hover_sb)
 	set_stylebox('hover_pressed', 'Button', button_pressed_sb)
@@ -455,7 +460,7 @@ func _init() -> void:
 
 	set_stylebox('disabled', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'FlatMenuButton', base_empty_wide_sb)
-	set_stylebox('focus', 'FlatMenuButton', base_empty_wide_sb)
+	set_stylebox('focus', 'FlatMenuButton', focus_sb)
 	set_stylebox('normal', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('normal_mirrored', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('hover', 'FlatMenuButton', flat_button_hover_sb)
@@ -489,7 +494,7 @@ func _init() -> void:
 
 	# GraphStateMachine
 
-	set_color('focus_color', 'GraphStateMachine', Color.TRANSPARENT)
+	set_color('focus_color', 'GraphStateMachine', accent_color * Color(1, 1, 1, 0.8))
 
 	# Box Containers
 
@@ -527,13 +532,13 @@ func _init() -> void:
 	sb.bg_color = mono_color * Color(1, 1, 1, 0.04)
 	set_stylebox('cursor', 'ItemList', sb)
 	set_stylebox('cursor_unfocused', 'ItemList', sb)
-	set_stylebox('focus', 'ItemList', base_empty_sb)
+	set_stylebox('focus', 'ItemList', focus_sb)
 
 	set_stylebox('hovered', 'ItemList', flat_button_hover_sb)
 	set_stylebox('selected', 'ItemList', flat_button_hover_sb)
-	set_stylebox('selected_focus', 'ItemList', flat_button_hover_sb)
+	set_stylebox('selected_focus', 'ItemList', focus_sb)
 	set_stylebox('hovered_selected', 'ItemList', flat_button_hover_sb)
-	set_stylebox('hovered_selected_focus', 'ItemList', flat_button_hover_sb)
+	set_stylebox('hovered_selected_focus', 'ItemList', focus_sb)
 
 	sb = base_sb.duplicate()
 	sb.set_content_margin_all(base_margin * 2 * scale)
@@ -557,8 +562,8 @@ func _init() -> void:
 	if draw_extra_borders:
 		_set_border(sb, extra_border_color_1, 1)
 	_set_margin(sb, base_margin * 2, base_margin * 0.75, base_margin * 2, base_margin * 0.75)
-	set_stylebox('focus', 'LineEdit', sb)
-	set_stylebox('focus', 'TextEdit', sb)
+	set_stylebox('focus', 'LineEdit', focus_sb)
+	set_stylebox('focus', 'TextEdit', focus_sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = _get_base_color(-0.9 if dark_theme else -1.8)
@@ -607,7 +612,7 @@ func _init() -> void:
 
 	set_stylebox('disabled', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'MenuButton', base_empty_wide_sb)
-	set_stylebox('focus', 'MenuButton', base_empty_wide_sb)
+	set_stylebox('focus', 'MenuButton', focus_sb)
 	set_stylebox('normal', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('normal_mirrored', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('pressed', 'MenuButton', flat_button_pressed_sb)
@@ -632,7 +637,7 @@ func _init() -> void:
 
 	set_stylebox('disabled', 'OptionButton', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'OptionButton', button_disabled_sb)
-	set_stylebox('focus', 'OptionButton', base_empty_sb)
+	set_stylebox('focus', 'OptionButton', focus_sb)
 	set_stylebox('normal', 'OptionButton', button_sb)
 	set_stylebox('normal_mirrored', 'OptionButton', button_sb)
 	set_stylebox('pressed', 'OptionButton', button_pressed_sb)
@@ -729,7 +734,7 @@ func _init() -> void:
 	# ScrollContainer
 
 	set_stylebox('panel', 'ScrollContainer', base_empty_sb)
-	set_stylebox('focus', 'ScrollContainer', base_empty_sb)
+	set_stylebox('focus', 'ScrollContainer', focus_sb)
 
 	# ScrollBar
 
@@ -755,13 +760,13 @@ func _init() -> void:
 	_set_margin(empty_sb, 0, margin, 0, margin)
 
 	set_stylebox('scroll', 'HScrollBar', empty_sb)
-	set_stylebox('scroll_focus', 'HScrollBar', empty_sb)
+	set_stylebox('scroll_focus', 'HScrollBar', focus_sb)
 
 	empty_sb = empty_sb.duplicate()
 	_set_margin(empty_sb, margin, 0, margin, 0)
 
 	set_stylebox('scroll', 'VScrollBar', empty_sb)
-	set_stylebox('scroll_focus', 'VScrollBar', empty_sb)
+	set_stylebox('scroll_focus', 'VScrollBar', focus_sb)
 
 	# SplitContainer
 
@@ -782,11 +787,8 @@ func _init() -> void:
 	sb.bg_color = _get_base_color(-0.35)
 	set_stylebox('tab_selected', 'TabContainerOdd', sb)
 
-	sb = sb.duplicate()
-	sb.bg_color = base_color
-	sb.border_color = accent_color
-	set_stylebox('tab_focus', 'TabBar', sb)
-	set_stylebox('tab_focus', 'TabContainer', sb)
+	set_stylebox('tab_focus', 'TabBar', focus_sb)
+	set_stylebox('tab_focus', 'TabContainer', focus_sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = Color.TRANSPARENT
@@ -834,10 +836,7 @@ func _init() -> void:
 	empty_sb = base_empty_sb.duplicate()
 	_set_margin(empty_sb, base_margin * 1.5, base_margin * 2.5, base_margin * 1.5, base_margin * 2.5)
 	set_stylebox('panel', 'Tree', empty_sb)
-
-	# Leaving focus empty for trees and scroll containers because there's no way to
-	# make focus indication look not janky when only a part of a dock is highlighted
-	set_stylebox('focus', 'Tree', base_empty_sb)
+	set_stylebox('focus', 'Tree', focus_sb)
 
 	sb = base_sb.duplicate()
 	sb.bg_color = _get_base_color(-1.2 if dark_theme else -1.8)
@@ -860,12 +859,12 @@ func _init() -> void:
 	set_stylebox('custom_button_hover', 'Tree', sb)
 	set_stylebox('hovered', 'Tree', sb)
 	set_stylebox('selected', 'Tree', sb)
-	set_stylebox('selected_focus', 'Tree', sb)
+	set_stylebox('selected_focus', 'Tree', focus_sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = _get_base_color(0.3, 0.7)
 	set_stylebox('hovered_selected', 'Tree', sb)
-	set_stylebox('hovered_selected_focus', 'Tree', sb)
+	set_stylebox('hovered_selected_focus', 'Tree', focus_sb)
 
 	set_stylebox('button_pressed', 'Tree', flat_button_pressed_sb)
 	set_stylebox('custom_button_pressed', 'Tree', flat_button_pressed_sb)
