@@ -821,19 +821,23 @@ func _init() -> void:
 
 	set_stylebox('tab_focus', 'TabBar', focus_sb)
 	set_stylebox('tab_focus', 'TabContainer', focus_sb)
+	set_stylebox('tab_focus', 'TabContainerOdd', focus_sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = Color.TRANSPARENT
 	sb.set_border_width_all(0)
 	set_stylebox('tab_unselected', 'TabBar', sb)
 	set_stylebox('tab_unselected', 'TabContainer', sb)
+	set_stylebox('tab_unselected', 'TabContainerOdd', sb)
 	set_stylebox('tab_disabled', 'TabBar', sb)
 	set_stylebox('tab_disabled', 'TabContainer', sb)
+	set_stylebox('tab_disabled', 'TabContainerOdd', sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = color_surface_base * Color(1, 1, 1, 0.8)
 	set_stylebox('tab_hovered', 'TabBar', sb)
 	set_stylebox('tab_hovered', 'TabContainer', sb)
+	set_stylebox('tab_hovered', 'TabContainerOdd', sb)
 
 	sb = base_sb.duplicate()
 	sb.set_content_margin_all(increased_margin * 1.5 * scale)
@@ -842,9 +846,18 @@ func _init() -> void:
 	sb.corner_radius_bottom_left = int(corner_radius * scale)
 	set_stylebox('panel', 'TabContainer', sb)
 
+	sb = sb.duplicate()
+	sb.bg_color = color_surface_base
+	set_stylebox('panel', 'TabContainerOdd', sb)
+
 	sb = empty_sb.duplicate()
 	_set_margin(sb, 0, 0, base_margin * 2, 0)
 	set_stylebox('tabbar_background', 'TabContainer', sb)
+
+	sb = base_sb.duplicate()
+	sb.bg_color = color_surface_lowest
+	_set_margin(sb, 0, base_margin, base_margin * 2, 0)
+	set_stylebox('tabbar_background', 'TabContainerOdd', sb)
 
 	# Tree
 
@@ -1028,24 +1041,6 @@ func _init() -> void:
 			var game_view_toolbar_margin_container : Control = game_view.find_children('', 'MarginContainer', true, false)[0]
 			game_view_toolbar_margin_container.add_theme_constant_override('margin_top', int(base_margin * 0.5 * scale))
 			game_view_toolbar_margin_container.add_theme_constant_override('margin_bottom', int(base_margin * 0.5 * scale))
-		
-		# ThemeTypeEditor TabContainer
-
-		# Tabs of ThemeTypeEditor need to be custom because of lighter background of
-		# the bottom panel
-
-		var theme_type_editor : Control = EditorInterface.get_base_control().find_children('', 'ThemeTypeEditor', true, false)[0]
-		var theme_type_editor_tab_container : TabContainer = theme_type_editor.find_children('', 'TabContainer', true, false)[0]
-
-		var theme_type_editor_tab_container_sb : StyleBoxFlat = base_sb.duplicate()
-		theme_type_editor_tab_container_sb.bg_color = color_surface_lower
-		theme_type_editor_tab_container_sb.set_content_margin_all(0)
-		theme_type_editor_tab_container_sb.content_margin_top = int(base_margin * scale)
-		theme_type_editor_tab_container_sb.corner_radius_bottom_left = 0
-		theme_type_editor_tab_container_sb.corner_radius_bottom_right = 0
-	
-		theme_type_editor_tab_container.add_theme_stylebox_override('tabbar_background', theme_type_editor_tab_container_sb)
-
 	).call_deferred()
 
 # Lighten base color in dark theme, darken in light theme, clamp
