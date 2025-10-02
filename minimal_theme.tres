@@ -795,6 +795,13 @@ func _init() -> void:
 
 	# TabContainer
 
+	set_color('font_selected_color', 'TabBar', color_font_and_icon_normal)
+	set_color('font_selected_color', 'TabContainer', color_font_and_icon_normal)
+	set_color('font_unselected_color', 'TabBar', color_font_and_icon_dimmed)
+	set_color('font_unselected_color', 'TabContainer', color_font_and_icon_dimmed)
+	set_color('font_disabled_color', 'TabBar', color_font_and_icon_dimmed * Color(1, 1, 1, 0.5))
+	set_color('font_disabled_color', 'TabContainer', color_font_and_icon_dimmed * Color(1, 1, 1, 0.5))
+
 	sb = base_sb.duplicate()
 	_set_margin(sb, base_margin * 4, base_margin * 2.3, base_margin * 4, base_margin * 2.3)
 	sb.set_corner_radius_all(0)
@@ -818,6 +825,8 @@ func _init() -> void:
 	sb.set_border_width_all(0)
 	set_stylebox('tab_unselected', 'TabBar', sb)
 	set_stylebox('tab_unselected', 'TabContainer', sb)
+	set_stylebox('tab_disabled', 'TabBar', sb)
+	set_stylebox('tab_disabled', 'TabContainer', sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = color_surface_base * Color(1, 1, 1, 0.8)
