@@ -768,14 +768,14 @@ func _init() -> void:
 	# ScrollBar
 
 	sb = base_sb.duplicate()
-	sb.bg_color = color_surface_highest
+	sb.bg_color = _get_base_color(0.5, 0.6)
 	_set_border(sb, base_color * Color(1, 1, 1, 0), 3)
 
 	set_stylebox('grabber', 'HScrollBar', sb)
 	set_stylebox('grabber', 'VScrollBar', sb)
 
 	sb = base_sb.duplicate()
-	sb.bg_color = color_surface_highest
+	sb.bg_color = _get_base_color(1.4, 0.5)
 	_set_border(sb, base_color * Color(1, 1, 1, 0), 2.5)
 
 	set_stylebox('grabber_highlight', 'HScrollBar', sb)
