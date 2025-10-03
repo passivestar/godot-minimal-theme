@@ -828,7 +828,7 @@ func _init() -> void:
 	set_color('icon_disabled_color', 'TabContainer', color_font_and_icon_dimmed * Color(1, 1, 1, 0.55))
 
 	sb = base_sb.duplicate()
-	_set_margin(sb, base_margin * 4, base_margin * 2.3, base_margin * 4, base_margin * 2.3)
+	_set_margin(sb, base_margin * 4, base_margin * 2.1, base_margin * 4, base_margin * 2.1)
 	sb.set_corner_radius_all(0)
 	sb.corner_radius_top_left = int(corner_radius * scale)
 	sb.corner_radius_top_right = int(corner_radius * scale)
