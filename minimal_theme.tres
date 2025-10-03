@@ -69,7 +69,7 @@ func _init() -> void:
 		contrast = -0.4
 	
 	# Surface colors
-	var color_surface_lowest : Color = _get_base_color(-1.3 if dark_theme else -2.2, 0.9)
+	var color_surface_lowest : Color = _get_base_color(-1.25 if dark_theme else -2.2, 0.9)
 	var color_surface_lower : Color = _get_base_color(-0.85 if dark_theme else -1.8, 0.9)
 	var color_surface_low : Color = _get_base_color(-0.55 if dark_theme else -0.9)  
 	var color_surface_base : Color = _get_base_color(-0.2)
@@ -373,6 +373,14 @@ func _init() -> void:
 	sb.bg_color = color_surface_lower
 	sb.set_content_margin_all(base_margin * scale)
 	set_stylebox('label_bg', 'EditorSpinSlider', sb)
+
+	# EditorNode
+
+	sb = base_sb.duplicate()
+	sb.set_content_margin_all(0)
+	sb.set_corner_radius_all(0)
+	sb.bg_color = color_surface_lowest
+	set_stylebox('Background', 'EditorStyles', sb)
 
 	# Viewport
 
@@ -845,13 +853,12 @@ func _init() -> void:
 	sb.bg_color = color_surface_base
 	set_stylebox('panel', 'TabContainerOdd', sb)
 
-	sb = empty_sb.duplicate()
-	_set_margin(sb, 0, 0, base_margin * 2, 0)
-	set_stylebox('tabbar_background', 'TabContainer', sb)
-
 	sb = base_sb.duplicate()
 	sb.bg_color = color_surface_lowest
-	_set_margin(sb, 0, base_margin, base_margin * 2, 0)
+	sb.corner_radius_bottom_left = 0
+	sb.corner_radius_bottom_right = 0
+	_set_margin(sb, 0, base_margin * 0.25, base_margin, 0)
+	set_stylebox('tabbar_background', 'TabContainer', sb)
 	set_stylebox('tabbar_background', 'TabContainerOdd', sb)
 
 	# Tree
