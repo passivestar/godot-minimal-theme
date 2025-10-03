@@ -984,6 +984,13 @@ func _init() -> void:
 	sb.bg_color = color_surface_low
 	set_stylebox('project_list', 'ProjectManager', sb)
 
+	# Asset Library
+
+	sb = base_sb.duplicate()
+	sb.set_content_margin_all(base_margin * 2 * scale)
+	sb.bg_color = color_surface_low
+	set_stylebox('panel', 'AssetLib', sb)
+
 	# HACKS
 	# This section is for workarounds for unthemable UI
 	# These could be fixed on the engine side in the future
