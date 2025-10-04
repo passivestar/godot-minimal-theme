@@ -930,8 +930,11 @@ func _init() -> void:
 	set_stylebox('hovered_selected', 'Tree', sb)
 	set_stylebox('hovered_selected_focus', 'Tree', sb)
 
-	set_stylebox('button_pressed', 'Tree', flat_button_pressed_sb)
-	set_stylebox('custom_button_pressed', 'Tree', flat_button_pressed_sb)
+	sb = flat_button_pressed_sb.duplicate()
+	sb.content_margin_top = 0
+	sb.content_margin_bottom = 0
+	set_stylebox('button_pressed', 'Tree', sb)
+	set_stylebox('custom_button_pressed', 'Tree', sb)
 
 	# Cursor is drawn on top of the item so it needs to be transparent
 	sb = base_sb.duplicate()
