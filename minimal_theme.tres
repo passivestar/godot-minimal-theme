@@ -69,13 +69,13 @@ func _init() -> void:
 		contrast = -0.4
 	
 	# Surface colors
-	var color_surface_lowest : Color = _get_base_color(-1.25 if dark_theme else -2.2, 0.9)
-	var color_surface_lower : Color = _get_base_color(-0.85 if dark_theme else -1.8, 0.9)
-	var color_surface_low : Color = _get_base_color(-0.55 if dark_theme else -0.9)  
+	var color_surface_lowest : Color = _get_base_color(-1.3 if dark_theme else -2.2, 0.9)
+	var color_surface_lower : Color = _get_base_color(-0.95 if dark_theme else -1.8, 0.9)
+	var color_surface_low : Color = _get_base_color(-0.6 if dark_theme else -0.9)  
 	var color_surface_base : Color = _get_base_color(-0.2)
 	var color_surface_high : Color = _get_base_color(0.2, 0.8)
-	var color_surface_higher : Color = _get_base_color(0.3, 0.8)
-	var color_surface_highest : Color = _get_base_color(0.5, 0.6)
+	var color_surface_higher : Color = _get_base_color(0.35, 0.8)
+	var color_surface_highest : Color = _get_base_color(0.55, 0.6)
 
 	# Font and icon colors
 	var color_font_and_icon_normal : Color = color_mono_icon_and_font * Color(1, 1, 1, 0.7)
@@ -84,13 +84,13 @@ func _init() -> void:
 	var color_font_and_icon_dimmed : Color = color_mono_icon_and_font * Color(1, 1, 1, 0.35 if dark_theme_icon_and_font else 0.5)
 	
 	# Button colors
-	var color_button_normal : Color = _get_base_color(0.3, 0.8)
-	var color_button_hover : Color = _get_base_color(0.5, 0.7)
-	var color_button_pressed : Color = _get_base_color(0.7, 0.7)
-	var color_button_disabled : Color = _get_base_color(0.2, 0.7)
-	var color_button_border : Color = _get_base_color(0.425, 0.7)
-	var color_button_border_hover : Color = _get_base_color(0.625, 0.7)
-	var color_button_border_pressed : Color = _get_base_color(0.825, 0.7)
+	var color_button_normal : Color = _get_base_color(0.35, 0.85)
+	var color_button_hover : Color = _get_base_color(0.55, 0.75)
+	var color_button_pressed : Color = _get_base_color(0.75, 0.75)
+	var color_button_disabled : Color = _get_base_color(0.2, 0.75)
+	var color_button_border : Color = _get_base_color(0.45, 0.75)
+	var color_button_border_hover : Color = _get_base_color(0.65, 0.75)
+	var color_button_border_pressed : Color = _get_base_color(0.85, 0.75)
 
 	# Extra border colors
 	var color_extra_border : Color = color_mono * Color(1, 1, 1, 0.4)
