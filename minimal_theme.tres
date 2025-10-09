@@ -933,8 +933,7 @@ func _init() -> void:
 	set_stylebox('hovered_selected_focus', 'Tree', sb)
 
 	sb = flat_button_pressed_sb.duplicate()
-	sb.content_margin_top = 0
-	sb.content_margin_bottom = 0
+	_set_margin(sb, base_margin, 0, base_margin, 0)
 	set_stylebox('button_pressed', 'Tree', sb)
 	set_stylebox('custom_button_pressed', 'Tree', sb)
 
