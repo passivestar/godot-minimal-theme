@@ -835,9 +835,9 @@ func _init() -> void:
 	sb.bg_color = color_surface_base
 	set_stylebox('tab_selected', 'TabContainerOdd', sb)
 
-	set_stylebox('tab_focus', 'TabBar', focus_sb)
-	set_stylebox('tab_focus', 'TabContainer', focus_sb)
-	set_stylebox('tab_focus', 'TabContainerOdd', focus_sb)
+	set_stylebox('tab_focus', 'TabBar', base_empty_sb)
+	set_stylebox('tab_focus', 'TabContainer', base_empty_sb)
+	set_stylebox('tab_focus', 'TabContainerOdd', base_empty_sb)
 
 	sb = sb.duplicate()
 	sb.bg_color = color_surface_lowest
