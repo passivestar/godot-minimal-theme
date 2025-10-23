@@ -257,6 +257,8 @@ func _init() -> void:
 	set_color('font_pressed_color', 'Button', color_font_and_icon_highlighted)
 	set_color('icon_disabled_color', 'Button', color_font_and_icon_dimmed)
 	set_color('icon_normal_color', 'Button', color_font_and_icon_normal)
+	set_color('icon_pressed_color', 'Button', accent_color)
+	set_color('icon_hover_pressed_color', 'Button', accent_color)
 	set_constant('outline_size', 'Button', 0)
 	set_stylebox('disabled', 'Button', button_disabled_sb)
 	set_stylebox('disabled_mirrored', 'Button', button_disabled_sb)
@@ -489,8 +491,6 @@ func _init() -> void:
 	set_color('icon_disabled_color', 'FlatMenuButton', color_font_and_icon_dimmed)
 	set_color('icon_focus_color', 'FlatMenuButton', color_font_and_icon_highlighted)
 	set_color('icon_hover_color', 'FlatMenuButton', color_font_and_icon_highlighted)
-	set_color('icon_hover_pressed_color', 'FlatMenuButton', color_font_and_icon_highlighted)
-	set_color('icon_pressed_color', 'FlatMenuButton', color_font_and_icon_highlighted)
 
 	set_stylebox('disabled', 'FlatMenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'FlatMenuButton', base_empty_wide_sb)
@@ -641,8 +641,6 @@ func _init() -> void:
 	set_color('icon_disabled_color', 'MenuButton', color_font_and_icon_dimmed)
 	set_color('icon_focus_color', 'MenuButton', color_font_and_icon_highlighted)
 	set_color('icon_hover_color', 'MenuButton', color_font_and_icon_highlighted)
-	set_color('icon_hover_pressed_color', 'MenuButton', color_font_and_icon_highlighted)
-	set_color('icon_pressed_color', 'MenuButton', color_font_and_icon_highlighted)
 
 	set_stylebox('disabled', 'MenuButton', base_empty_wide_sb)
 	set_stylebox('disabled_mirrored', 'MenuButton', base_empty_wide_sb)
