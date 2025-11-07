@@ -16,9 +16,9 @@ Minimal theme supports all editor settings. My recommendations are:
 
 `Editor Settings -> Interface -> Theme`:
 
-- Base Color: `#252525`
+- Base Color: `#272727`
 - Accent Color: `#569eff`
-- Contrast: `0.25-0.3`
+- Contrast: `0.3-0.35`
 - Icon Saturation: `2`
 - Corner Radius: `4-5`
 
