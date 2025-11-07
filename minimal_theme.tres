@@ -714,9 +714,9 @@ func _init() -> void:
 	set_stylebox('panel', 'PopupMenu', sb)
 
 	var line_sb : StyleBoxLine = StyleBoxLine.new()
-	line_sb.color = Color(0, 0, 0, 0.2 if dark_theme else 0.1)
-	line_sb.grow_begin = base_margin * -1.5 * scale
-	line_sb.grow_end = base_margin * -1.5 * scale
+	line_sb.color = color_mono * Color(1, 1, 1, 0.075 if dark_theme else 0.125)
+	line_sb.grow_begin = base_margin * -2.0 * scale
+	line_sb.grow_end = base_margin * -2.0 * scale
 	line_sb.thickness = int(ceilf(scale * 2))
 	set_stylebox('labeled_separator_left', 'PopupMenu', line_sb)
 	set_stylebox('labeled_separator_right', 'PopupMenu', line_sb)
@@ -967,7 +967,7 @@ func _init() -> void:
 	# Separators
 
 	line_sb = StyleBoxLine.new()
-	line_sb.color = Color(0, 0, 0, 0.3) if dark_theme else Color(0, 0, 0, 0.1)
+	line_sb.color = Color(0, 0, 0, 0.4) if dark_theme else Color(0, 0, 0, 0.2)
 	line_sb.grow_begin = base_margin * -1 * scale
 	line_sb.grow_end = base_margin * -1 * scale
 	line_sb.thickness = int(ceilf(scale * 2))
