@@ -301,7 +301,7 @@ func _init() -> void:
 	set_color('box_selection_fill_color', 'Editor', color_mono * Color(1, 1, 1, 0.12))
 	set_color('box_selection_stroke_color', 'Editor', color_mono * Color(1, 1, 1, 0.4))
 	# Ruler in 2D view:
-	set_color('dark_color_2', 'Editor', color_mono_inv * Color(1, 1, 1, 0.3))
+	set_color('dark_color_2', 'Editor', base_color.lerp(color_mono_inv, 0.3) * Color(1, 1, 1, 0.8))
 	# Shortcut tree cell background:
 	set_color('dark_color_3', 'Editor', color_surface_lower)
 
