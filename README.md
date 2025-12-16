@@ -28,6 +28,7 @@ Minimal theme supports all editor settings. My recommendations are:
 `Editor Settings -> Interface -> Editor`:
 
 - Main Font: [Inter](https://rsms.me/inter/)
+- Dock Tab Style: `Icon Only`
 
 ## Compatibility
 
